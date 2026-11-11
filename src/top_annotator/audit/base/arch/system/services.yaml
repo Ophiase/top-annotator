@@ -1,0 +1,4 @@
+# top-annotator cache (arch/system/services); safe to edit and share.
+# TODO: audit a fresh Arch Linux install and fill this file; see CONTRIBUTING.md.
+version: 1
+annotations:

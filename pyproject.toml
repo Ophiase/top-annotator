@@ -1,0 +1,27 @@
+[project]
+name = "top-annotator"
+version = "0.1.0"
+description = "A terminal process viewer whose only job is to show what you have not audited yet"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Phorcys" }]
+requires-python = ">=3.14"
+dependencies = ["pyyaml>=6.0.3", "textual>=8.2.7"]
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/top_annotator"]
+
+[dependency-groups]
+dev = ["pytest>=9.1.1", "ruff>=0.15.14", "ty>=0.0.39"]
+
+[project.scripts]
+top-annotator = "top_annotator.__main__:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

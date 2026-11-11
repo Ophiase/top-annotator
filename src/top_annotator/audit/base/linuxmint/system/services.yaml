@@ -1,0 +1,4 @@
+# top-annotator cache (linuxmint/system/services); safe to edit and share.
+# TODO: audit a fresh Linux Mint install and fill this file; see CONTRIBUTING.md.
+version: 1
+annotations:

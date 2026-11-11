@@ -1,0 +1,120 @@
+# top-annotator cache (ubuntu/system/boot); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  (sd-pam)|(sd-pam):
+    category: safe
+    note: systemd user session PAM helper; shipped by the Ubuntu package `systemd`. Package-managed,
+      so `dpkg -V systemd` is the integrity check.
+    provider: systemd
+    updated: '2026-11-01'
+  bwrap|/usr/bin/bwrap:
+    category: safe
+    children:
+    - cat
+    note: bubblewrap sandbox helper; shipped by the Ubuntu package `bubblewrap` at `/usr/bin/bwrap`.
+      Package-managed, so `dpkg -V bubblewrap` is the integrity check. Vouches for a direct `cat` child
+      only, the runtime's own `cat` a Flatpak app such as Obsidian pipes its output through; a host `cat`
+      elsewhere stays judged on its own.
+    provider: distro
+    updated: '2026-11-11'
+  dbus-broker-lau|/usr/bin/dbus-broker-launch:
+    category: safe
+    note: D-Bus broker launcher; shipped by the Ubuntu package `dbus-broker` at `/usr/bin/dbus-broker-launch`.
+      Package-managed, so `dpkg -V dbus-broker` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  dbus-broker|/usr/bin/dbus-broker:
+    category: safe
+    note: D-Bus message broker; shipped by the Ubuntu package `dbus-broker` at `/usr/bin/dbus-broker`.
+      Package-managed, so `dpkg -V dbus-broker` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  dbus-broker|dbus-broker:
+    category: safe
+    note: D-Bus message broker; shipped by the Ubuntu package `dbus-broker` at `dbus-broker`.
+      Package-managed, so `dpkg -V dbus-broker` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  polkitd|/usr/lib/polkit-1/polkitd:
+    category: safe
+    note: policy authorisation service; shipped by the Ubuntu package `polkitd` at `/usr/lib/polkit-1/polkitd`.
+      Package-managed, so `dpkg -V polkitd` is the integrity check.
+    provider: distro
+    updated: '2026-11-09'
+  polkitd|/usr/libexec/polkitd:
+    category: safe
+    note: policy authorisation service; shipped by the Ubuntu package `polkitd` at `/usr/libexec/polkitd`.
+      Package-managed, so `dpkg -V polkitd` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  rtkit-daemon|/usr/libexec/rtkit-daemon:
+    category: safe
+    note: realtime scheduling helper; shipped by the Ubuntu package `rtkit` at `/usr/libexec/rtkit-daemon`.
+      Package-managed, so `dpkg -V rtkit` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  systemd-journal|/lib/systemd/systemd-journald:
+    category: safe
+    note: systemd journal daemon; shipped by the Ubuntu package `systemd` at `/lib/systemd/systemd-journald`.
+      Package-managed, so `dpkg -V systemd` is the integrity check.
+    provider: systemd
+    updated: '2026-11-01'
+  systemd-journal|/usr/lib/systemd/systemd-journald:
+    category: safe
+    note: systemd journal daemon; shipped by the Ubuntu package `systemd` at `/usr/lib/systemd/systemd-journald`.
+      Package-managed, so `dpkg -V systemd` is the integrity check. Merged-/usr path of the `/lib` entry
+      above.
+    provider: systemd
+    updated: '2026-11-09'
+  systemd-logind|/lib/systemd/systemd-logind:
+    category: safe
+    note: systemd login session manager; shipped by the Ubuntu package `systemd` at `/lib/systemd/systemd-logind`.
+      Package-managed, so `dpkg -V systemd` is the integrity check.
+    provider: systemd
+    updated: '2026-11-01'
+  systemd-logind|/usr/lib/systemd/systemd-logind:
+    category: safe
+    note: systemd login session manager; shipped by the Ubuntu package `systemd` at `/usr/lib/systemd/systemd-logind`.
+      Package-managed, so `dpkg -V systemd` is the integrity check. Merged-/usr path of the `/lib` entry
+      above.
+    provider: systemd
+    updated: '2026-11-09'
+  systemd-resolve|/lib/systemd/systemd-resolved:
+    category: safe
+    note: systemd DNS resolver; shipped by the Ubuntu package `systemd` at `/lib/systemd/systemd-resolved`.
+      Package-managed, so `dpkg -V systemd` is the integrity check.
+    provider: systemd
+    updated: '2026-11-01'
+  systemd-resolve|/usr/lib/systemd/systemd-resolved:
+    category: safe
+    note: systemd DNS resolver; shipped by the Ubuntu package `systemd-resolved` at `/usr/lib/systemd/systemd-resolved`.
+      Package-managed, so `dpkg -V systemd-resolved` is the integrity check. Merged-/usr path of the `/lib`
+      entry above.
+    provider: systemd
+    updated: '2026-11-09'
+  systemd-udevd|/lib/systemd/systemd-udevd:
+    category: safe
+    note: systemd device manager; shipped by the Ubuntu package `udev` at `/lib/systemd/systemd-udevd`.
+      Package-managed, so `dpkg -V udev` is the integrity check.
+    provider: systemd
+    updated: '2026-11-01'
+  systemd-udevd|/usr/lib/systemd/systemd-udevd:
+    category: safe
+    note: udev device manager; shipped by the Ubuntu package `udev` at `/usr/lib/systemd/systemd-udevd`.
+      Package-managed, so `dpkg -V udev` is the integrity check. Merged-/usr path of the `/lib` entry
+      above.
+    provider: systemd
+    updated: '2026-11-09'
+  systemd|/sbin/init:
+    category: safe
+    note: systemd service manager; shipped by the Ubuntu package `systemd-sysv` at `/sbin/init`.
+      Package-managed, so `dpkg -V systemd-sysv` is the integrity check.
+    provider: systemd
+    updated: '2026-11-01'
+  systemd|/usr/lib/systemd/systemd:
+    category: safe
+    note: systemd service manager; shipped by the Ubuntu package `systemd` at `/usr/lib/systemd/systemd`.
+      Package-managed, so `dpkg -V systemd` is the integrity check.
+    provider: systemd
+    updated: '2026-11-01'
+version: 1

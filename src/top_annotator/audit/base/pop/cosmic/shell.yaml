@@ -1,0 +1,96 @@
+# top-annotator cache (pop/cosmic/shell); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  cosmic-app-libr|/usr/bin/cosmic-app-library:
+    category: safe
+    note: COSMIC application library; shipped by the Pop!_OS package `cosmic-app-library` at `/usr/bin/cosmic-app-library`.
+      Package-managed, so `dpkg -V cosmic-app-library` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-applet-a|/usr/bin/cosmic-applets:
+    category: safe
+    note: COSMIC panel applet (audio, battery, input, network, power, status area, tiling); shipped by
+      the Pop!_OS package `cosmic-applets` at `/usr/bin/cosmic-applets`. Package-managed, so `dpkg
+      -V cosmic-applets` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-applet-b|/usr/bin/cosmic-applets:
+    category: safe
+    note: COSMIC panel applet (audio, battery, input, network, power, status area, tiling); shipped by
+      the Pop!_OS package `cosmic-applets` at `/usr/bin/cosmic-applets`. Package-managed, so `dpkg
+      -V cosmic-applets` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-applet-i|/usr/bin/cosmic-applets:
+    category: safe
+    note: COSMIC panel applet (audio, battery, input, network, power, status area, tiling); shipped by
+      the Pop!_OS package `cosmic-applets` at `/usr/bin/cosmic-applets`. Package-managed, so `dpkg
+      -V cosmic-applets` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-applet-n|/usr/bin/cosmic-applets:
+    category: safe
+    note: COSMIC panel applet (audio, battery, input, network, power, status area, tiling); shipped by
+      the Pop!_OS package `cosmic-applets` at `/usr/bin/cosmic-applets`. Package-managed, so `dpkg
+      -V cosmic-applets` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-applet-p|/usr/bin/cosmic-applets:
+    category: safe
+    note: COSMIC panel applet (audio, battery, input, network, power, status area, tiling); shipped by
+      the Pop!_OS package `cosmic-applets` at `/usr/bin/cosmic-applets`. Package-managed, so `dpkg
+      -V cosmic-applets` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-applet-s|/usr/bin/cosmic-applets:
+    category: safe
+    note: COSMIC panel applet (audio, battery, input, network, power, status area, tiling); shipped by
+      the Pop!_OS package `cosmic-applets` at `/usr/bin/cosmic-applets`. Package-managed, so `dpkg
+      -V cosmic-applets` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-applet-t|/usr/bin/cosmic-applets:
+    category: safe
+    note: COSMIC panel applet (audio, battery, input, network, power, status area, tiling); shipped by
+      the Pop!_OS package `cosmic-applets` at `/usr/bin/cosmic-applets`. Package-managed, so `dpkg
+      -V cosmic-applets` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-files-ap|/usr/bin/cosmic-files-applet:
+    category: safe
+    note: COSMIC files applet; shipped by the Pop!_OS package `cosmic-files` at `/usr/bin/cosmic-files-applet`.
+      Package-managed, so `dpkg -V cosmic-files` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-launcher|/usr/bin/cosmic-launcher:
+    category: safe
+    note: COSMIC launcher; shipped by the Pop!_OS package `cosmic-launcher` at `/usr/bin/cosmic-launcher`.
+      Package-managed, so `dpkg -V cosmic-launcher` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-panel|/usr/bin/cosmic-panel:
+    category: safe
+    note: COSMIC panel; shipped by the Pop!_OS package `cosmic-panel` at `/usr/bin/cosmic-panel`.
+      Package-managed, so `dpkg -V cosmic-panel` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-toplevel|/usr/bin/pop-launcher:
+    category: safe
+    note: pop-launcher window plugin, re-executes pop-launcher; shipped by the Pop!_OS package
+      `pop-launcher` at `/usr/bin/pop-launcher`. Package-managed, so `dpkg -V pop-launcher` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-workspac|/usr/bin/cosmic-workspaces:
+    category: safe
+    note: COSMIC workspaces overview; shipped by the Pop!_OS package `cosmic-workspaces` at `/usr/bin/cosmic-workspaces`.
+      Package-managed, so `dpkg -V cosmic-workspaces` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  pop-launcher|/usr/bin/pop-launcher:
+    category: safe
+    note: launcher search backend; shipped by the Pop!_OS package `pop-launcher` at `/usr/bin/pop-launcher`.
+      Package-managed, so `dpkg -V pop-launcher` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+version: 1

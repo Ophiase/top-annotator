@@ -1,0 +1,14 @@
+version: 1
+annotations:
+  gnome-shell|/usr/bin/gnome-shell:
+    category: safe
+    provider: desktop
+    note: the desktop shell; package gnome-shell
+  pipewire|/usr/bin/pipewire:
+    category: safe
+    provider: desktop
+    note: audio and video server; package pipewire
+  xdg-desktop-por|/usr/libexec/xdg-desktop-portal:
+    category: safe
+    provider: desktop
+    note: desktop portal; package xdg-desktop-portal

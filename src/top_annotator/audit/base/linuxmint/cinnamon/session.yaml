@@ -1,0 +1,4 @@
+# top-annotator cache (linuxmint/cinnamon/session); safe to edit and share.
+# TODO: audit a fresh Linux Mint Cinnamon install and fill this file; see CONTRIBUTING.md.
+version: 1
+annotations:

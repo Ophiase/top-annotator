@@ -1,0 +1,12 @@
+# top-annotator cache (ubuntu/system/suggestions/clipboard); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  wl-copy|/usr/bin/wl-copy:
+    category: safe
+    note: Wayland clipboard writer; it forks and stays alive to serve the copied data until something
+      else is copied. Shipped by the Ubuntu package `wl-clipboard` at `/usr/bin/wl-copy`. Package-managed,
+      so `dpkg -V wl-clipboard` is the integrity check. The binary is safe; what matters is who calls
+      it, so its parent stays reviewed on its own.
+    provider: distro
+    updated: '2026-11-10'
+version: 1

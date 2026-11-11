@@ -1,0 +1,49 @@
+# top-annotator cache (pop/system/system76); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  com.system76.Fi|/usr/bin/com.system76.FirmwareManager.Notify:
+    category: safe
+    note: Pop!_OS firmware update notifier; started daily by the user timer `com.system76.FirmwareManager.Notify.timer`,
+      queries fwupd and waits on its desktop notification. Shipped by the Pop!_OS package `firmware-manager-notify`
+      at `/usr/bin/com.system76.FirmwareManager.Notify`. Package-managed, so `dpkg -V firmware-manager-notify` is
+      the integrity check.
+    provider: derivative
+    updated: '2026-11-10'
+  pop-system-upda|/usr/bin/pop-system-updater:
+    category: safe
+    note: Pop!_OS system update service; shipped by the Pop!_OS package `pop-system-updater` at
+      `/usr/bin/pop-system-updater`. Package-managed, so `dpkg -V pop-system-updater` is the integrity
+      check.
+    provider: derivative
+    updated: '2026-11-01'
+  pop-upgrade|/usr/bin/pop-upgrade:
+    category: safe
+    note: Pop!_OS release upgrade helper; shipped by the Pop!_OS package `pop-upgrade` at `/usr/bin/pop-upgrade`.
+      Package-managed, so `dpkg -V pop-upgrade` is the integrity check.
+    provider: derivative
+    updated: '2026-11-01'
+  python3|/usr/bin/python3|/usr/lib/pop-transition/service.py:
+    category: safe
+    note: system component; shipped by the Pop!_OS package `python3-minimal` at `/usr/bin/python3`.
+      Package-managed, so `dpkg -V python3-minimal` is the integrity check.
+    provider: derivative
+    updated: '2026-11-01'
+  system76-power|/usr/bin/system76-power:
+    category: safe
+    note: Pop!_OS power management daemon; shipped by the Pop!_OS package `system76-power` at `/usr/bin/system76-power`.
+      Package-managed, so `dpkg -V system76-power` is the integrity check.
+    provider: derivative
+    updated: '2026-11-01'
+  system76-schedu|/usr/bin/system76-scheduler:
+    category: safe
+    note: Pop!_OS scheduler daemon; shipped by the Pop!_OS package `system76-scheduler` at `/usr/bin/system76-scheduler`.
+      Package-managed, so `dpkg -V system76-scheduler` is the integrity check.
+    provider: derivative
+    updated: '2026-11-01'
+  touchegg|/usr/bin/touchegg:
+    category: safe
+    note: Pop!_OS touchpad gesture daemon; shipped by the Pop!_OS package `touchegg` at `/usr/bin/touchegg`.
+      Package-managed, so `dpkg -V touchegg` is the integrity check.
+    provider: derivative
+    updated: '2026-11-01'
+version: 1

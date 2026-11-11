@@ -1,0 +1,84 @@
+# top-annotator cache (pop/cosmic/session); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  cosmic-bg|/usr/bin/cosmic-bg:
+    category: safe
+    note: COSMIC wallpaper service; shipped by the Pop!_OS package `cosmic-bg` at `/usr/bin/cosmic-bg`.
+      Package-managed, so `dpkg -V cosmic-bg` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-comp|/usr/bin/cosmic-comp:
+    category: safe
+    note: COSMIC Wayland compositor; shipped by the Pop!_OS package `cosmic-comp` at `/usr/bin/cosmic-comp`.
+      Package-managed, so `dpkg -V cosmic-comp` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-greeter-|/usr/bin/cosmic-greeter-daemon:
+    category: safe
+    note: COSMIC greeter privileged helper; shipped by the Pop!_OS package `cosmic-greeter-daemon` at
+      `/usr/bin/cosmic-greeter-daemon`. Package-managed, so `dpkg -V cosmic-greeter-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-greeter|/usr/bin/cosmic-greeter:
+    category: safe
+    note: COSMIC login screen; shipped by the Pop!_OS package `cosmic-greeter` at `/usr/bin/cosmic-greeter`.
+      Package-managed, so `dpkg -V cosmic-greeter` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-idle|/usr/bin/cosmic-idle:
+    category: safe
+    note: COSMIC idle and screen lock manager; shipped by the Pop!_OS package `cosmic-idle` at `/usr/bin/cosmic-idle`.
+      Package-managed, so `dpkg -V cosmic-idle` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-notifica|/usr/bin/cosmic-notifications:
+    category: safe
+    note: COSMIC notification daemon; shipped by the Pop!_OS package `cosmic-notifications` at `/usr/bin/cosmic-notifications`.
+      Package-managed, so `dpkg -V cosmic-notifications` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-osd|/usr/bin/cosmic-osd:
+    category: safe
+    note: COSMIC on-screen display; shipped by the Pop!_OS package `cosmic-osd` at `/usr/bin/cosmic-osd`.
+      Package-managed, so `dpkg -V cosmic-osd` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-osk|/usr/bin/cosmic-osk:
+    category: safe
+    note: COSMIC on-screen keyboard; shipped by the Pop!_OS package `cosmic-osk` at `/usr/bin/cosmic-osk`.
+      Package-managed, so `dpkg -V cosmic-osk` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-session|/usr/bin/cosmic-session:
+    category: safe
+    note: COSMIC session manager; shipped by the Pop!_OS package `cosmic-session` at `/usr/bin/cosmic-session`.
+      Package-managed, so `dpkg -V cosmic-session` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  cosmic-settings|/usr/bin/cosmic-settings-daemon:
+    category: safe
+    note: COSMIC settings daemon; shipped by the Pop!_OS package `cosmic-settings-daemon` at `/usr/bin/cosmic-settings-daemon`.
+      Package-managed, so `dpkg -V cosmic-settings-daemon` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  greetd|/usr/bin/greetd:
+    category: safe
+    note: login manager session worker; shipped by the Pop!_OS package `greetd` at `/usr/bin/greetd`.
+      Package-managed, so `dpkg -V greetd` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  greetd|greetd:
+    category: safe
+    note: login manager, started by systemd with the COSMIC greeter config; shipped by the Pop!_OS package
+      `greetd` at `greetd`. Package-managed, so `dpkg -V greetd` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  xdg-desktop-por|/usr/libexec/xdg-desktop-portal-cosmic:
+    category: safe
+    note: COSMIC backend of the XDG desktop portal; shipped by the Pop!_OS package `xdg-desktop-portal-cosmic`
+      at `/usr/libexec/xdg-desktop-portal-cosmic`. Package-managed, so `dpkg -V xdg-desktop-portal-cosmic`
+      is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+version: 1

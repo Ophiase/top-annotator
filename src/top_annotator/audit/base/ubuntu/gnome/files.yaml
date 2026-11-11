@@ -1,0 +1,89 @@
+# top-annotator cache (ubuntu/gnome/files); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  gvfs-afc-volume|/usr/libexec/gvfs-afc-volume-monitor:
+    category: safe
+    note: GNOME virtual filesystem backend; shipped by the Ubuntu package `gvfs-backends` at `/usr/libexec/gvfs-afc-volume-monitor`.
+      Package-managed, so `dpkg -V gvfs-backends` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gvfs-goa-volume|/usr/libexec/gvfs-goa-volume-monitor:
+    category: safe
+    note: GNOME virtual filesystem backend; shipped by the Ubuntu package `gvfs-backends` at `/usr/libexec/gvfs-goa-volume-monitor`.
+      Package-managed, so `dpkg -V gvfs-backends` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gvfs-gphoto2-vo|/usr/libexec/gvfs-gphoto2-volume-monitor:
+    category: safe
+    note: GNOME virtual filesystem backend; shipped by the Ubuntu package `gvfs-backends` at `/usr/libexec/gvfs-gphoto2-volume-monitor`.
+      Package-managed, so `dpkg -V gvfs-backends` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gvfs-mtp-volume|/usr/libexec/gvfs-mtp-volume-monitor:
+    category: safe
+    note: GNOME virtual filesystem backend; shipped by the Ubuntu package `gvfs-backends` at `/usr/libexec/gvfs-mtp-volume-monitor`.
+      Package-managed, so `dpkg -V gvfs-backends` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gvfs-udisks2-vo|/usr/libexec/gvfs-udisks2-volume-monitor:
+    category: safe
+    note: GNOME virtual filesystem backend; shipped by the Ubuntu package `gvfs-daemons` at `/usr/libexec/gvfs-udisks2-volume-monitor`.
+      Package-managed, so `dpkg -V gvfs-daemons` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gvfsd-dnssd|/usr/libexec/gvfsd-dnssd:
+    category: safe
+    note: GNOME virtual filesystem backend; shipped by the Ubuntu package `gvfs-backends` at `/usr/libexec/gvfsd-dnssd`.
+      Package-managed, so `dpkg -V gvfs-backends` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gvfsd-fuse|/usr/libexec/gvfsd-fuse:
+    category: safe
+    note: GNOME virtual filesystem backend; shipped by the Ubuntu package `gvfs-fuse` at `/usr/libexec/gvfsd-fuse`.
+      Package-managed, so `dpkg -V gvfs-fuse` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gvfsd-http|/usr/libexec/gvfsd-http:
+    category: safe
+    note: GNOME virtual filesystem backend; shipped by the Ubuntu package `gvfs-backends` at `/usr/libexec/gvfsd-http`.
+      Package-managed, so `dpkg -V gvfs-backends` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gvfsd-metadata|/usr/libexec/gvfsd-metadata:
+    category: safe
+    note: GNOME virtual filesystem backend; shipped by the Ubuntu package `gvfs-daemons` at `/usr/libexec/gvfsd-metadata`.
+      Package-managed, so `dpkg -V gvfs-daemons` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gvfsd-network|/usr/libexec/gvfsd-network:
+    category: safe
+    note: GNOME virtual filesystem backend; shipped by the Ubuntu package `gvfs-backends` at `/usr/libexec/gvfsd-network`.
+      Package-managed, so `dpkg -V gvfs-backends` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gvfsd-trash|/usr/libexec/gvfsd-trash:
+    category: safe
+    note: GNOME virtual filesystem backend; shipped by the Ubuntu package `gvfs-daemons` at `/usr/libexec/gvfsd-trash`.
+      Package-managed, so `dpkg -V gvfs-daemons` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gvfsd|/usr/libexec/gvfsd:
+    category: safe
+    note: GNOME virtual filesystem backend; shipped by the Ubuntu package `gvfs-daemons` at `/usr/libexec/gvfsd`.
+      Package-managed, so `dpkg -V gvfs-daemons` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  nautilus|/usr/bin/nautilus:
+    category: safe
+    note: GNOME Files, started on demand by D-Bus activation as `--gapplication-service`; shipped by the
+      Ubuntu package `nautilus` at `/usr/bin/nautilus`. Package-managed, so `dpkg -V nautilus` is the
+      integrity check.
+    provider: app
+    updated: '2026-11-10'
+  tracker-miner-f|/usr/libexec/tracker-miner-fs-3:
+    category: safe
+    note: Tracker file indexer; shipped by the Ubuntu package `tracker-miner-fs` at `/usr/libexec/tracker-miner-fs-3`.
+      Package-managed, so `dpkg -V tracker-miner-fs` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+version: 1

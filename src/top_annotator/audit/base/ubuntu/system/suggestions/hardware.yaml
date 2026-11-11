@@ -1,0 +1,23 @@
+# top-annotator cache (ubuntu/system/suggestions/hardware); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  nvidia-persiste|/usr/bin/nvidia-persistenced:
+    category: safe
+    note: NVIDIA driver persistence daemon; shipped by the Ubuntu package `nvidia-compute-utils-<version>`
+      at `/usr/bin/nvidia-persistenced`. Package-managed, so `dpkg -V nvidia-compute-utils-<version>`
+      is the integrity check.
+    provider: distro
+    updated: '2026-11-09'
+  smartd|/usr/sbin/smartd:
+    category: safe
+    note: disk SMART health monitor; shipped by the Ubuntu package `smartmontools` at `/usr/sbin/smartd`.
+      Package-managed, so `dpkg -V smartmontools` is the integrity check.
+    provider: distro
+    updated: '2026-11-09'
+  switcheroo-cont|/usr/libexec/switcheroo-control:
+    category: safe
+    note: GPU switching service; shipped by the Ubuntu package `switcheroo-control` at `/usr/libexec/switcheroo-control`.
+      Package-managed, so `dpkg -V switcheroo-control` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+version: 1

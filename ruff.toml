@@ -1,0 +1,29 @@
+line-length = 88
+preview = true
+exclude = [".agents"]
+
+[lint]
+fixable = ["ALL"]
+select = ["E", "F", "UP", "B", "I", "SIM", "S", "RUF", "PTH", "C4", "ARG", "G"]
+
+[lint.per-file-ignores]
+"tests/**/*.py" = ["assert", "unused-function-argument", "hardcoded-temp-file"]
+# The suspicious directories are the point of the heuristic.
+"src/top_annotator/heuristics.py" = ["hardcoded-temp-file"]
+# The verifier shells out to dpkg with fixed arguments, no shell.
+"src/top_annotator/process/verify/verify.py" = [
+  "suspicious-subprocess-import",
+  "subprocess-without-shell-equals-true",
+  "start-process-with-partial-path",
+]
+# The yank pipes the selected row to wl-copy, resolved by shutil.which, no shell.
+"src/top_annotator/tui/actions/view.py" = [
+  "suspicious-subprocess-import",
+  "subprocess-without-shell-equals-true",
+]
+# The demo recorder runs ImageMagick's convert on frames it wrote itself, no shell.
+"tools/record_demo/gif_builder.py" = [
+  "suspicious-subprocess-import",
+  "subprocess-without-shell-equals-true",
+  "start-process-with-partial-path",
+]

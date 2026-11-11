@@ -1,0 +1,64 @@
+# top-annotator cache (ubuntu/gnome/input); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  at-spi-bus-laun|/usr/libexec/at-spi-bus-launcher:
+    category: safe
+    note: GNOME accessibility bus; shipped by the Ubuntu package `at-spi2-core` at `/usr/libexec/at-spi-bus-launcher`.
+      Package-managed, so `dpkg -V at-spi2-core` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  at-spi2-registr|/usr/libexec/at-spi2-registryd:
+    category: safe
+    note: GNOME accessibility bus; shipped by the Ubuntu package `at-spi2-core` at `/usr/libexec/at-spi2-registryd`.
+      Package-managed, so `dpkg -V at-spi2-core` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  dconf-service|/usr/libexec/dconf-service:
+    category: safe
+    note: system component; shipped by the Ubuntu package `dconf-service` at `/usr/libexec/dconf-service`.
+      Package-managed, so `dpkg -V dconf-service` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  dconf|/usr/bin/dconf:
+    category: safe
+    note: system component; shipped by the Ubuntu package `dconf-cli` at `/usr/bin/dconf`. Package-managed,
+      so `dpkg -V dconf-cli` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  ibus-daemon|/usr/bin/ibus-daemon:
+    category: safe
+    note: IBus input method service; shipped by the Ubuntu package `ibus` at `/usr/bin/ibus-daemon`.
+      Package-managed, so `dpkg -V ibus` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  ibus-engine-sim|/usr/libexec/ibus-engine-simple:
+    category: safe
+    note: IBus input method service; shipped by the Ubuntu package `ibus` at `/usr/libexec/ibus-engine-simple`.
+      Package-managed, so `dpkg -V ibus` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  ibus-extension-|/usr/libexec/ibus-extension-gtk3:
+    category: safe
+    note: IBus input method service; shipped by the Ubuntu package `ibus` at `/usr/libexec/ibus-extension-gtk3`.
+      Package-managed, so `dpkg -V ibus` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  ibus-memconf|/usr/libexec/ibus-memconf:
+    category: safe
+    note: IBus input method service; shipped by the Ubuntu package `ibus` at `/usr/libexec/ibus-memconf`.
+      Package-managed, so `dpkg -V ibus` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  ibus-portal|/usr/libexec/ibus-portal:
+    category: safe
+    note: IBus input method service; shipped by the Ubuntu package `ibus` at `/usr/libexec/ibus-portal`.
+      Package-managed, so `dpkg -V ibus` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  ibus-x11|/usr/libexec/ibus-x11:
+    category: safe
+    note: IBus input method service; shipped by the Ubuntu package `ibus` at `/usr/libexec/ibus-x11`.
+      Package-managed, so `dpkg -V ibus` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+version: 1

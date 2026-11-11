@@ -1,0 +1,16 @@
+# top-annotator cache (ubuntu/system/suggestions/vpn); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  charon|/usr/lib/ipsec/charon:
+    category: safe
+    note: StrongSwan IPsec daemon; shipped by the Ubuntu package `strongswan-charon` at `/usr/lib/ipsec/charon`.
+      Package-managed, so `dpkg -V strongswan-charon` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  starter|/usr/lib/ipsec/starter:
+    category: safe
+    note: StrongSwan starter daemon; shipped by the Ubuntu package `strongswan-starter` at `/usr/lib/ipsec/starter`.
+      Package-managed, so `dpkg -V strongswan-starter` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+version: 1

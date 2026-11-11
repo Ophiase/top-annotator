@@ -1,0 +1,4 @@
+# top-annotator cache (debian/system/services); safe to edit and share.
+# TODO: audit a fresh Debian install and fill this file; see CONTRIBUTING.md.
+version: 1
+annotations:

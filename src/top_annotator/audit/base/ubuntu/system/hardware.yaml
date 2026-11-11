@@ -1,0 +1,34 @@
+# top-annotator cache (ubuntu/system/hardware); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  acpid|/usr/sbin/acpid:
+    category: safe
+    note: ACPI event daemon; shipped by the Ubuntu package `acpid` at `/usr/sbin/acpid`. Package-managed,
+      so `dpkg -V acpid` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  colord|/usr/libexec/colord:
+    category: safe
+    note: colour profile service; shipped by the Ubuntu package `colord` at `/usr/libexec/colord`.
+      Package-managed, so `dpkg -V colord` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  thermald|/usr/sbin/thermald:
+    category: safe
+    note: thermal management daemon; shipped by the Ubuntu package `thermald` at `/usr/sbin/thermald`.
+      Package-managed, so `dpkg -V thermald` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  udisksd|/usr/libexec/udisks2/udisksd:
+    category: safe
+    note: disk management service; shipped by the Ubuntu package `udisks2` at `/usr/libexec/udisks2/udisksd`.
+      Package-managed, so `dpkg -V udisks2` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  upowerd|/usr/libexec/upowerd:
+    category: core
+    note: power management service; shipped by the Ubuntu package `upower` at `/usr/libexec/upowerd`.
+      Package-managed, so `dpkg -V upower` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+version: 1

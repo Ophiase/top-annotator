@@ -1,0 +1,48 @@
+cosmic_name_prefixes:
+  - cosmic-
+  - greetd
+  - pop-launcher
+
+cosmic_paths:
+  - /usr/libexec/xdg-desktop-portal-cosmic
+  - /usr/lib/pop-launcher
+
+gnome_name_prefixes:
+  - at-spi
+  - dconf
+  - evolution-
+  - gdm
+  - gjs
+  - gnome-
+  - goa-
+  - gsd-
+  - gvfs
+  - ibus
+  - pipewire
+  - tracker-
+  - wireplumber
+  - xdg-
+  - Xwayland
+  - speech-dispatch
+  - sd_
+
+gnome_paths:
+  - /usr/libexec/gdm
+  - /usr/libexec/gsd
+  - /usr/libexec/gvfs
+  - /usr/libexec/goa
+  - /usr/libexec/at-spi
+  - /usr/libexec/evolution
+  - /usr/libexec/tracker
+  - /usr/libexec/xdg
+  - /usr/libexec/dconf
+  - /usr/libexec/ibus
+  - /usr/libexec/p11-kit
+  - /usr/lib/gnome
+
+program_paths:
+  - /home/
+  - /opt/
+  - /usr/local/
+  - /usr/share/code
+  - /var/lib/flatpak

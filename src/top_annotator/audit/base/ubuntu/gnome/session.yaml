@@ -1,0 +1,64 @@
+# top-annotator cache (ubuntu/gnome/session); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  Xwayland|/usr/bin/Xwayland:
+    category: safe
+    note: X11 compatibility server for Wayland; shipped by the Ubuntu package `xwayland` at `/usr/bin/Xwayland`.
+      Package-managed, so `dpkg -V xwayland` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gdm-session-wor|gdm-session-wor:
+    category: safe
+    note: GDM session worker; shipped by the Ubuntu package `gdm3` at `gdm-session-worker [pam/gdm-password]`.
+      Package-managed, so `dpkg -V gdm3` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gdm-wayland-ses|/usr/libexec/gdm-wayland-session:
+    category: safe
+    note: GDM Wayland session launcher; shipped by the Ubuntu package `gdm3` at `/usr/libexec/gdm-wayland-session`.
+      Package-managed, so `dpkg -V gdm3` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gdm3|/usr/sbin/gdm3:
+    category: safe
+    note: GNOME display manager; shipped by the Ubuntu package `gdm3` at `/usr/sbin/gdm3`. Package-managed,
+      so `dpkg -V gdm3` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gjs|/usr/bin/gjs-console:
+    category: safe
+    note: GNOME Shell JavaScript helper; shipped by the Ubuntu package `gjs` at `/usr/bin/gjs-console`.
+      Package-managed, so `dpkg -V gjs` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gnome-keyring-d|/usr/bin/gnome-keyring-daemon:
+    category: safe
+    note: GNOME keyring daemon; shipped by the Ubuntu package `gnome-keyring` at `/usr/bin/gnome-keyring-daemon`.
+      Package-managed, so `dpkg -V gnome-keyring` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gnome-session-b|/usr/libexec/gnome-session-binary:
+    category: safe
+    note: GNOME session manager; shipped by the Ubuntu package `gnome-session-bin` at `/usr/libexec/gnome-session-binary`.
+      Package-managed, so `dpkg -V gnome-session-bin` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gnome-session-c|/usr/libexec/gnome-session-ctl:
+    category: safe
+    note: GNOME session control helper; shipped by the Ubuntu package `gnome-session-bin` at `/usr/libexec/gnome-session-ctl`.
+      Package-managed, so `dpkg -V gnome-session-bin` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gnome-shell-cal|/usr/libexec/gnome-shell-calendar-server:
+    category: safe
+    note: GNOME Shell calendar backend; shipped by the Ubuntu package `gnome-shell` at `/usr/libexec/gnome-shell-calendar-server`.
+      Package-managed, so `dpkg -V gnome-shell` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gnome-shell|/usr/bin/gnome-shell:
+    category: safe
+    note: GNOME Shell desktop; shipped by the Ubuntu package `gnome-shell` at `/usr/bin/gnome-shell`.
+      Package-managed, so `dpkg -V gnome-shell` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+version: 1

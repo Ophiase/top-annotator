@@ -1,0 +1,87 @@
+system_directories:
+  - /bin/
+  - /lib/
+  - /lib64/
+  - /nix/store/
+  - /sbin/
+  - /snap/
+  - /usr/bin/
+  - /usr/lib/
+  - /usr/lib64/
+  - /usr/libexec/
+  - /usr/sbin/
+  - /usr/share/
+
+suspicious_directories:
+  - /tmp/
+  - /var/tmp/
+  - /dev/shm/
+  - /run/user/
+
+system_executables:
+  - Xwayland
+  - accounts-daemon
+  - acpid
+  - atop
+  - atopacctd
+  - avahi-daemon
+  - bluetoothd
+  - cron
+  - cupsd
+  - dbus-broker
+  - dbus-broker-launch
+  - earlyoom
+  - gdm3
+  - gnome-shell
+  - NetworkManager
+  - packagekitd
+  - polkitd
+  - rsyslogd
+  - snapd
+  - sshd
+  - systemd
+  - systemd-journald
+  - systemd-logind
+  - systemd-resolved
+  - systemd-udevd
+  - thermald
+  - udisksd
+  - upowerd
+  - wpa_supplicant
+
+name_aliases:
+  systemd:
+    - init
+    - systemd
+
+system_name_prefixes:
+  - accounts-daemon
+  - at-spi
+  - avahi
+  - bwrap
+  - colord
+  - cups
+  - dbus
+  - dconf
+  - evolution-
+  - gnome-
+  - goa-
+  - gsd-
+  - gvfs
+  - kthreadd
+  - packagekit
+  - pipewire
+  - polkit
+  - rtkit
+  - sd_
+  - speech-
+  - systemd
+  - tracker-
+  - udisks
+  - upower
+  - wireplumber
+  - xdg-
+
+kernel_thread_parent_pids:
+  - 0
+  - 2
