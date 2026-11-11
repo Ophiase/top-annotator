@@ -1,0 +1,28 @@
+# top-annotator cache (ubuntu/system/suggestions/services); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  atopacctd|/usr/sbin/atopacctd:
+    category: safe
+    note: atop process accounting daemon; shipped by the Ubuntu package `atop` at `/usr/sbin/atopacctd`.
+      Package-managed, so `dpkg -V atop` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  atop|/usr/bin/atop:
+    category: safe
+    note: system activity recorder; shipped by the Ubuntu package `atop` at `/usr/bin/atop`. Package-managed,
+      so `dpkg -V atop` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  chronyd|/usr/sbin/chronyd:
+    category: safe
+    note: NTP clock synchronisation; shipped by the Ubuntu package `chrony` at `/usr/sbin/chronyd`.
+      Package-managed, so `dpkg -V chrony` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  earlyoom|/usr/bin/earlyoom:
+    category: safe
+    note: earlyoom out-of-memory killer; shipped by the Ubuntu package `earlyoom`. Package-managed,
+      so `dpkg -V earlyoom` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+version: 1

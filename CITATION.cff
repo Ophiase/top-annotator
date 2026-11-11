@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this software, cite it as below.
+title: Top Annotator
+abstract: A terminal process viewer whose only job is to show what you have not audited yet.
+authors:
+  - alias: "Phorcys"
+    website: "https://github.com/Ophiase"
+repository-code: https://github.com/Ophiase/top-annotator
+license: Apache-2.0
+version: 0.1.0
+date-released: 2026-11-11

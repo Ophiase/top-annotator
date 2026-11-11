@@ -1,0 +1,29 @@
+version: 1
+annotations:
+  firefox|/usr/lib/firefox/firefox:
+    category: host
+    provider: app
+    gui: true
+    children: [WebContent]
+    note: the browser; what it spawns is reviewed on its own
+  kitty|/usr/bin/kitty:
+    category: trust
+    provider: app
+    gui: true
+    terminal: true
+    note: the terminal; covers its shells
+  claude|/home/demo/.local/bin/claude:
+    category: trust
+    provider: app
+    agent: true
+    note: an AI agent; its shells run its commands
+  nginx|/usr/sbin/nginx:
+    category: safe
+    provider: service
+    children: [nginx]
+    exclusive: true
+    note: web server, reachable from the network, so it spawns only its workers
+  python3|/usr/bin/python3.14|/home/demo/.local/bin/notes-sync.py:
+    category: personal
+    provider: app
+    note: my own script

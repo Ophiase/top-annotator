@@ -1,0 +1,40 @@
+version: 1
+annotations:
+  systemd|/usr/lib/systemd/systemd:
+    category: core
+    provider: systemd
+    note: PID 1 and the user's service manager
+  systemd-journal|/usr/lib/systemd/systemd-journald:
+    category: safe
+    provider: systemd
+    note: the journal; package systemd
+  systemd-udevd|/usr/lib/systemd/systemd-udevd:
+    category: safe
+    provider: systemd
+    note: device events; package systemd
+  dbus-broker-lau|/usr/bin/dbus-broker-launch:
+    category: safe
+    provider: distro
+    children: [dbus-broker]
+    note: system bus launcher; package dbus-broker
+  dbus-broker|/usr/bin/dbus-broker:
+    category: safe
+    provider: distro
+    note: system bus; package dbus-broker
+  NetworkManager|/usr/sbin/NetworkManager:
+    category: safe
+    provider: distro
+    note: network configuration; package network-manager
+  polkitd|/usr/lib/polkit-1/polkitd:
+    category: safe
+    provider: distro
+    note: authorization daemon; package polkitd
+  demo-updater|/usr/libexec/demo-updater:
+    category: safe
+    provider: derivative
+    note: the fictional distribution's updater
+  cron|/usr/sbin/cron:
+    category: safe
+    provider: distro
+    children: [sh]
+    note: scheduled jobs; package cron

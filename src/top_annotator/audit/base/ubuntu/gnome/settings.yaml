@@ -1,0 +1,123 @@
+# top-annotator cache (ubuntu/gnome/settings); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  gsd-a11y-settin|/usr/libexec/gsd-a11y-settings:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-a11y-settings`. Package-managed, so `dpkg -V gnome-settings-daemon` is the
+      integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-color|/usr/libexec/gsd-color:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-color`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-datetime|/usr/libexec/gsd-datetime:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-datetime`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-disk-utilit|/usr/libexec/gsd-disk-utility-notify:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-disk-utility` at
+      `/usr/libexec/gsd-disk-utility-notify`. Package-managed, so `dpkg -V gnome-disk-utility` is the
+      integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-housekeepin|/usr/libexec/gsd-housekeeping:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-housekeeping`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-keyboard|/usr/libexec/gsd-keyboard:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-keyboard`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-media-keys|/usr/libexec/gsd-media-keys:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-media-keys`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-power|/usr/libexec/gsd-power:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-power`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-print-notif|/usr/libexec/gsd-print-notifications:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-print-notifications`. Package-managed, so `dpkg -V gnome-settings-daemon` is
+      the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-printer|/usr/libexec/gsd-printer:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-printer`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-rfkill|/usr/libexec/gsd-rfkill:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-rfkill`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-screensaver|/usr/libexec/gsd-screensaver-proxy:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-screensaver-proxy`. Package-managed, so `dpkg -V gnome-settings-daemon` is
+      the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-sharing|/usr/libexec/gsd-sharing:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-sharing`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-smartcard|/usr/libexec/gsd-smartcard:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-smartcard`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-sound|/usr/libexec/gsd-sound:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-sound`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-wacom|/usr/libexec/gsd-wacom:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-wacom`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  gsd-xsettings|/usr/libexec/gsd-xsettings:
+    category: safe
+    note: GNOME Settings Daemon module; shipped by the Ubuntu package `gnome-settings-daemon`
+      at `/usr/libexec/gsd-xsettings`. Package-managed, so `dpkg -V gnome-settings-daemon` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+version: 1

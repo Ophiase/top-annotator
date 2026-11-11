@@ -1,0 +1,40 @@
+# top-annotator cache (ubuntu/programs/suggestions/docker); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  containerd|/usr/bin/containerd:
+    category: safe
+    note: 'container runtime, rootful system service and the rootless one; shipped by the Ubuntu package
+      `containerd.io` at `/usr/bin/containerd`. Package-managed, so `dpkg -V containerd.io` is the integrity
+      check. Trust stops here: containers and their processes keep their own signatures and are reviewed
+      one by one.'
+    provider: service
+    updated: '2026-11-09'
+  dockerd|/usr/bin/dockerd:
+    category: safe
+    note: 'Docker daemon, rootful or rootless; shipped by the Ubuntu package `docker-ce` at `/usr/bin/dockerd`.
+      Package-managed, so `dpkg -V docker-ce` is the integrity check. Trust stops here: containers and
+      their processes keep their own signatures and are reviewed one by one.'
+    provider: service
+    updated: '2026-11-09'
+  exe|/usr/bin/rootlesskit:
+    category: safe
+    note: rootlesskit re-executing itself via /proc/self/exe; shipped by the Ubuntu package `docker-ce-rootless-extras`
+      at `/usr/bin/rootlesskit`. Package-managed, so `dpkg -V docker-ce-rootless-extras` is the integrity
+      check.
+    provider: service
+    updated: '2026-11-09'
+  rootlesskit|/usr/bin/rootlesskit:
+    category: safe
+    note: 'Docker rootless namespace launcher; shipped by the Ubuntu package `docker-ce-rootless-extras`
+      at `/usr/bin/rootlesskit`. Package-managed, so `dpkg -V docker-ce-rootless-extras` is the integrity
+      check. Trust stops here: containers and their processes keep their own signatures and are reviewed
+      one by one.'
+    provider: service
+    updated: '2026-11-09'
+  slirp4netns|/usr/bin/slirp4netns:
+    category: safe
+    note: user-mode network for rootless containers; shipped by the Ubuntu package `slirp4netns` at `/usr/bin/slirp4netns`.
+      Package-managed, so `dpkg -V slirp4netns` is the integrity check.
+    provider: service
+    updated: '2026-11-09'
+version: 1

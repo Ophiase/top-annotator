@@ -1,0 +1,64 @@
+# top-annotator cache (ubuntu/programs/firefox); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  Isolated Web Co|/usr/lib/firefox/firefox-bin:
+    category: safe
+    note: Firefox isolated web content process; shipped by the Ubuntu package `firefox` at `/usr/lib/firefox/firefox-bin`.
+      Package-managed, so `dpkg -V firefox` is the integrity check.
+    provider: app
+    updated: '2026-11-01'
+  Privileged Cont|/usr/lib/firefox/firefox-bin:
+    category: safe
+    note: Firefox privileged content process; shipped by the Ubuntu package `firefox` at `/usr/lib/firefox/firefox-bin`.
+      Package-managed, so `dpkg -V firefox` is the integrity check.
+    provider: app
+    updated: '2026-11-01'
+  RDD Process|/usr/lib/firefox/firefox-bin:
+    category: safe
+    note: Firefox media decoder process; shipped by the Ubuntu package `firefox` at `/usr/lib/firefox/firefox-bin`.
+      Package-managed, so `dpkg -V firefox` is the integrity check.
+    provider: app
+    updated: '2026-11-01'
+  Socket Process|/usr/lib/firefox/firefox-bin:
+    category: safe
+    note: Firefox sandboxed socket process; shipped by the Ubuntu package `firefox` at `/usr/lib/firefox/firefox-bin`.
+      Package-managed, so `dpkg -V firefox` is the integrity check.
+    provider: app
+    updated: '2026-11-01'
+  Utility Process|/usr/lib/firefox/firefox-bin:
+    category: safe
+    note: Firefox sandboxed utility process; shipped by the Ubuntu package `firefox` at `/usr/lib/firefox/firefox-bin`.
+      Package-managed, so `dpkg -V firefox` is the integrity check.
+    provider: app
+    updated: '2026-11-01'
+  Web Content|/usr/lib/firefox/firefox-bin:
+    category: safe
+    note: Firefox web content process; shipped by the Ubuntu package `firefox` at `/usr/lib/firefox/firefox-bin`.
+      Package-managed, so `dpkg -V firefox` is the integrity check.
+    provider: app
+    updated: '2026-11-01'
+  WebExtensions|/usr/lib/firefox/firefox-bin:
+    category: safe
+    note: Firefox extension process; shipped by the Ubuntu package `firefox` at `/usr/lib/firefox/firefox-bin`.
+      Package-managed, so `dpkg -V firefox` is the integrity check.
+    provider: app
+    updated: '2026-11-01'
+  crashhelper|/usr/lib/firefox/crashhelper:
+    category: safe
+    note: Firefox crash reporter helper; shipped by the Ubuntu package `firefox` at `/usr/lib/firefox/crashhelper`.
+      Package-managed, so `dpkg -V firefox` is the integrity check.
+    provider: app
+    updated: '2026-11-01'
+  firefox-bin|/usr/lib/firefox/firefox-bin:
+    category: safe
+    note: Firefox browser process; shipped by the Ubuntu package `firefox` at `/usr/lib/firefox/firefox-bin`.
+      Package-managed, so `dpkg -V firefox` is the integrity check.
+    provider: app
+    updated: '2026-11-01'
+  forkserver|/usr/lib/firefox/firefox-bin:
+    category: safe
+    note: Firefox sandbox fork server; shipped by the Ubuntu package `firefox` at `/usr/lib/firefox/firefox-bin`.
+      Package-managed, so `dpkg -V firefox` is the integrity check.
+    provider: app
+    updated: '2026-11-01'
+version: 1

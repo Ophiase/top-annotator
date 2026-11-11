@@ -1,0 +1,15 @@
+# top-annotator cache (pop/system/services); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  accounts-daemon|/usr/libexec/accounts-daemon:
+    category: safe
+    note: user account service; shipped by the Pop!_OS package `accountsservice` at `/usr/libexec/accounts-daemon`.
+      Package-managed, so `dpkg -V accountsservice` is the integrity check.
+    provider: derivative
+    updated: '2026-11-01'
+  fwupd|/usr/libexec/fwupd/fwupd:
+    category: safe
+    note: firmware update service; shipped by the Pop!_OS package `fwupd` at `/usr/libexec/fwupd/fwupd`.
+      Package-managed, so `dpkg -V fwupd` is the integrity check.
+    provider: derivative
+    updated: '2026-11-01'

@@ -1,0 +1,41 @@
+# top-annotator cache (ubuntu/programs/suggestions/apps); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  Discord|/usr/share/discord/Discord:
+    category: trust
+    gui: true
+    note: Discord client; shipped by `discord.com` as the package `discord` at `/usr/share/discord/Discord`,
+      not by Ubuntu. `dpkg -V discord` checks the files, not the vendor.
+    provider: app
+    updated: '2026-11-11'
+  chrome|/opt/google/chrome/chrome:
+    category: host
+    gui: true
+    note: Google Chrome; its helpers are judged on their own; shipped by `dl.google.com` as the package
+      `google-chrome-stable` at `/opt/google/chrome/chrome`, not by Ubuntu. `dpkg -V google-chrome-stable`
+      checks the files, not the vendor.
+    provider: app
+    updated: '2026-11-11'
+  code|/usr/share/code/code:
+    category: host
+    gui: true
+    note: Visual Studio Code; its extensions and terminals are judged on their own; shipped by `packages.microsoft.com`
+      as the package `code` at `/usr/share/code/code`, not by Ubuntu. `dpkg -V code` checks the files,
+      not the vendor.
+    provider: app
+    updated: '2026-11-11'
+  signal-desktop|/opt/Signal/signal-desktop:
+    category: trust
+    gui: true
+    note: Signal messenger; shipped by `updates.signal.org` as the package `signal-desktop` at `/opt/Signal/signal-desktop`,
+      not by Ubuntu. `dpkg -V signal-desktop` checks the files, not the vendor.
+    provider: app
+    updated: '2026-11-11'
+  spotify|/usr/share/spotify/spotify:
+    category: trust
+    gui: true
+    note: Spotify client; shipped by `repository.spotify.com` as the package `spotify-client` at `/usr/share/spotify/spotify`,
+      not by Ubuntu. `dpkg -V spotify-client` checks the files, not the vendor.
+    provider: app
+    updated: '2026-11-11'
+version: 1

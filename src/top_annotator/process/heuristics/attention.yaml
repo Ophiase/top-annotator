@@ -1,0 +1,55 @@
+argument_bound:
+  - base64
+  - curl
+  - dd
+  - nc
+  - ncat
+  - netcat
+  - openssl
+  - rsync
+  - scp
+  - sftp
+  - socat
+  - ssh
+  - wget
+  - xxd
+
+shells:
+  - bash
+  - dash
+  - fish
+  - sh
+  - zsh
+
+inline_interpreters:
+  - node
+  - perl
+  - php
+  - python
+  - python3
+  - ruby
+
+inline_flags:
+  - -c
+  - -e
+
+root_sockets:
+  containerd:
+    - /run/containerd/containerd.sock
+  dockerd:
+    - /run/docker.sock
+    - /var/run/docker.sock
+  incusd:
+    - /var/lib/incus/unix.socket
+  libvirtd:
+    - /run/libvirt/libvirt-sock
+    - /var/run/libvirt/libvirt-sock
+  lxd:
+    - /var/lib/lxd/unix.socket
+    - /var/snap/lxd/common/lxd/unix.socket
+  podman:
+    - /run/podman/podman.sock
+
+x11_servers:
+  - X
+  - Xorg

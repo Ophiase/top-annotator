@@ -1,0 +1,4 @@
+# top-annotator cache (opensuse-tumbleweed/kde/session); safe to edit and share.
+# TODO: audit a fresh openSUSE Tumbleweed with KDE Plasma install and fill this file; see CONTRIBUTING.md.
+version: 1
+annotations:

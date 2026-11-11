@@ -1,0 +1,46 @@
+# top-annotator cache (ubuntu/gnome/online); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  evolution-addre|/usr/libexec/evolution-addressbook-factory:
+    category: safe
+    note: Evolution Data Server calendar/contacts backend; shipped by the Ubuntu package `evolution-data-server`
+      at `/usr/libexec/evolution-addressbook-factory`. Package-managed, so `dpkg -V evolution-data-server`
+      is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  evolution-alarm|/usr/libexec/evolution-data-server/evolution-alarm-notify:
+    category: safe
+    note: Evolution Data Server calendar/contacts backend; shipped by the Ubuntu package `evolution-data-server`
+      at `/usr/libexec/evolution-data-server/evolution-alarm-notify`. Package-managed, so `dpkg -V evolution-data-server`
+      is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  evolution-calen|/usr/libexec/evolution-calendar-factory:
+    category: safe
+    note: Evolution Data Server calendar/contacts backend; shipped by the Ubuntu package `evolution-data-server`
+      at `/usr/libexec/evolution-calendar-factory`. Package-managed, so `dpkg -V evolution-data-server`
+      is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  evolution-sourc|/usr/libexec/evolution-source-registry:
+    category: safe
+    note: Evolution Data Server calendar/contacts backend; shipped by the Ubuntu package `evolution-data-server`
+      at `/usr/libexec/evolution-source-registry`. Package-managed, so `dpkg -V evolution-data-server`
+      is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  goa-daemon|/usr/libexec/goa-daemon:
+    category: safe
+    note: GNOME Online Accounts service; shipped by the Ubuntu package `gnome-online-accounts`
+      at `/usr/libexec/goa-daemon`. Package-managed, so `dpkg -V gnome-online-accounts` is the integrity
+      check.
+    provider: desktop
+    updated: '2026-11-01'
+  goa-identity-se|/usr/libexec/goa-identity-service:
+    category: safe
+    note: GNOME Online Accounts service; shipped by the Ubuntu package `gnome-online-accounts`
+      at `/usr/libexec/goa-identity-service`. Package-managed, so `dpkg -V gnome-online-accounts` is the
+      integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+version: 1

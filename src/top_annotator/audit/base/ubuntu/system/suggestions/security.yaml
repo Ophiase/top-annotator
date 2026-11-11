@@ -1,0 +1,34 @@
+# top-annotator cache (ubuntu/system/suggestions/security); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  auditd|/usr/sbin/auditd:
+    category: safe
+    note: 'Linux audit daemon: records system calls the rules name; shipped by the Ubuntu package `auditd`
+      at `/usr/sbin/auditd`. Package-managed, so `dpkg -V auditd` is the integrity check.'
+    provider: distro
+    updated: '2026-11-11'
+  clamd|/usr/sbin/clamd:
+    category: safe
+    note: ClamAV scanning daemon; shipped by the Ubuntu package `clamav-daemon` at `/usr/sbin/clamd`.
+      Package-managed, so `dpkg -V clamav-daemon` is the integrity check.
+    provider: service
+    updated: '2026-11-11'
+  fail2ban-server|/usr/bin/python3|/usr/bin/fail2ban-server:
+    category: safe
+    note: 'fail2ban: bans addresses that fail to log in too often; shipped by the Ubuntu package `fail2ban`
+      at `/usr/bin/fail2ban-server`. Package-managed, so `dpkg -V fail2ban` is the integrity check.'
+    provider: service
+    updated: '2026-11-11'
+  freshclam|/usr/bin/freshclam:
+    category: safe
+    note: ClamAV signature updater; it reaches the network; shipped by the Ubuntu package `clamav-freshclam`
+      at `/usr/bin/freshclam`. Package-managed, so `dpkg -V clamav-freshclam` is the integrity check.
+    provider: service
+    updated: '2026-11-11'
+  usbguard-daemo|/usr/sbin/usbguard-daemon:
+    category: safe
+    note: 'USBGuard: blocks USB devices a policy does not allow; shipped by the Ubuntu package `usbguard`
+      at `/usr/sbin/usbguard-daemon`. Package-managed, so `dpkg -V usbguard` is the integrity check.'
+    provider: distro
+    updated: '2026-11-11'
+version: 1

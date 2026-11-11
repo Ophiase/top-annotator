@@ -1,0 +1,42 @@
+# top-annotator cache (ubuntu/gnome/media); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  pipewire-pulse|/usr/bin/pipewire:
+    category: safe
+    note: system component; shipped by the Ubuntu package `pipewire-bin` at `/usr/bin/pipewire`.
+      Package-managed, so `dpkg -V pipewire-bin` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  pipewire|/usr/bin/pipewire:
+    category: safe
+    note: PipeWire media server; shipped by the Ubuntu package `pipewire-bin` at `/usr/bin/pipewire`.
+      Package-managed, so `dpkg -V pipewire-bin` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  sd_dummy|/usr/lib/speech-dispatcher-modules/sd_dummy:
+    category: safe
+    note: speech-dispatcher dummy output module; shipped by the Ubuntu package `speech-dispatcher`
+      at `/usr/lib/speech-dispatcher-modules/sd_dummy`. Package-managed, so `dpkg -V speech-dispatcher`
+      is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  sd_espeak-ng|/usr/lib/speech-dispatcher-modules/sd_espeak-ng:
+    category: safe
+    note: speech-dispatcher eSpeak output module; shipped by the Ubuntu package `speech-dispatcher-espeak-ng`
+      at `/usr/lib/speech-dispatcher-modules/sd_espeak-ng`. Package-managed, so `dpkg -V speech-dispatcher-espeak-ng`
+      is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  speech-dispatch|/usr/bin/speech-dispatcher:
+    category: safe
+    note: speech synthesis dispatcher; shipped by the Ubuntu package `speech-dispatcher` at `/usr/bin/speech-dispatcher`.
+      Package-managed, so `dpkg -V speech-dispatcher` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  wireplumber|/usr/bin/wireplumber:
+    category: safe
+    note: PipeWire session manager; shipped by the Ubuntu package `wireplumber` at `/usr/bin/wireplumber`.
+      Package-managed, so `dpkg -V wireplumber` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+version: 1

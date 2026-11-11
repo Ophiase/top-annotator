@@ -1,0 +1,42 @@
+# top-annotator cache (ubuntu/programs/suggestions/servers); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  apache2|/usr/sbin/apache2:
+    category: safe
+    children:
+    - apache2
+    note: Apache web server; it listens on the network; shipped by the Ubuntu package `apache2-bin` at
+      `/usr/sbin/apache2`. Package-managed, so `dpkg -V apache2-bin` is the integrity check.
+    provider: service
+    updated: '2026-11-11'
+  mysqld|/usr/sbin/mysqld:
+    category: safe
+    note: MySQL server; shipped by the Ubuntu package `mysql-server-core-8.0` at `/usr/sbin/mysqld`. Package-managed,
+      so `dpkg -V mysql-server-core-8.0` is the integrity check.
+    provider: service
+    updated: '2026-11-11'
+  nginx|/usr/sbin/nginx:
+    category: safe
+    children:
+    - nginx
+    exclusive: true
+    note: nginx web server; it listens on the network and should spawn only its workers; shipped by the
+      Ubuntu package `nginx-core` at `/usr/sbin/nginx`. Package-managed, so `dpkg -V nginx-core` is the
+      integrity check.
+    provider: service
+    updated: '2026-11-11'
+  postgres|/usr/lib/postgresql/16/bin/postgres:
+    category: safe
+    children:
+    - postgres
+    note: PostgreSQL 16 server; shipped by the Ubuntu package `postgresql-16` at `/usr/lib/postgresql/16/bin/postgres`.
+      Package-managed, so `dpkg -V postgresql-16` is the integrity check.
+    provider: service
+    updated: '2026-11-11'
+  redis-server|/usr/bin/redis-server:
+    category: safe
+    note: Redis server; shipped by the Ubuntu package `redis-server` at `/usr/bin/redis-server`. Package-managed,
+      so `dpkg -V redis-server` is the integrity check.
+    provider: service
+    updated: '2026-11-11'
+version: 1

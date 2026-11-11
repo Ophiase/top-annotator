@@ -1,0 +1,68 @@
+# top-annotator cache (ubuntu/gnome/portals); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  flatpak-portal|/usr/libexec/flatpak-portal:
+    category: safe
+    note: Flatpak portal, the D-Bus service that lets a sandboxed app spawn sandboxed children (user unit
+      `flatpak-portal.service`); shipped by the Pop!_OS package `flatpak` (apt.pop-os.org/release) at
+      `/usr/libexec/flatpak-portal`. Package-managed, so `dpkg -V flatpak` is the integrity check.
+    provider: desktop
+    updated: '2026-11-11'
+  flatpak-session|/usr/libexec/flatpak-session-helper:
+    category: safe
+    note: Flatpak session helper; shipped by the Ubuntu package `flatpak` at `/usr/libexec/flatpak-session-helper`.
+      Package-managed, so `dpkg -V flatpak` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  p11-kit-server|/usr/libexec/p11-kit/p11-kit-server:
+    category: safe
+    note: PKCS#11 key bridge; shipped by the Ubuntu package `p11-kit` at `/usr/libexec/p11-kit/p11-kit-server`.
+      Package-managed, so `dpkg -V p11-kit` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  p11-kit-remote|/usr/libexec/p11-kit/p11-kit-remote:
+    category: safe
+    note: PKCS#11 remoting helper started by `p11-kit-server` for Flatpak sandboxes, serving the read-only
+      system trust store (`p11-kit-trust.so`, `write-protected=yes`); shipped by the Ubuntu package `p11-kit`
+      at `/usr/libexec/p11-kit/p11-kit-remote`. Package-managed, so `dpkg -V p11-kit` is the integrity check.
+    provider: desktop
+    updated: '2026-11-11'
+  xdg-dbus-proxy|/usr/bin/xdg-dbus-proxy:
+    category: safe
+    note: D-Bus proxy for sandboxed applications; shipped by the Ubuntu package `xdg-dbus-proxy`
+      at `/usr/bin/xdg-dbus-proxy`. Package-managed, so `dpkg -V xdg-dbus-proxy` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  xdg-desktop-por|/usr/libexec/xdg-desktop-portal:
+    category: safe
+    note: XDG desktop portal; shipped by the Ubuntu package `xdg-desktop-portal` at `/usr/libexec/xdg-desktop-portal`.
+      Package-managed, so `dpkg -V xdg-desktop-portal` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  xdg-desktop-por|/usr/libexec/xdg-desktop-portal-gnome:
+    category: safe
+    note: XDG desktop portal; shipped by the Ubuntu package `xdg-desktop-portal-gnome` at `/usr/libexec/xdg-desktop-portal-gnome`.
+      Package-managed, so `dpkg -V xdg-desktop-portal-gnome` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  xdg-desktop-por|/usr/libexec/xdg-desktop-portal-gtk:
+    category: safe
+    note: XDG desktop portal; shipped by the Ubuntu package `xdg-desktop-portal-gtk` at `/usr/libexec/xdg-desktop-portal-gtk`.
+      Package-managed, so `dpkg -V xdg-desktop-portal-gtk` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+  xdg-document-po|/usr/libexec/xdg-document-portal:
+    category: safe
+    children:
+    - fusermount3
+    note: XDG document portal; shipped by the Ubuntu package `xdg-desktop-portal` at `/usr/libexec/xdg-document-portal`.
+      Package-managed, so `dpkg -V xdg-desktop-portal` is the integrity check.
+    provider: desktop
+    updated: '2026-11-09'
+  xdg-permission-|/usr/libexec/xdg-permission-store:
+    category: safe
+    note: XDG permission store; shipped by the Ubuntu package `xdg-desktop-portal` at `/usr/libexec/xdg-permission-store`.
+      Package-managed, so `dpkg -V xdg-desktop-portal` is the integrity check.
+    provider: desktop
+    updated: '2026-11-01'
+version: 1

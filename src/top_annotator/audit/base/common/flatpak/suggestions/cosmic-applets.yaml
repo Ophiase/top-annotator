@@ -1,0 +1,16 @@
+# top-annotator cache (common/flatpak/suggestions/cosmic-applets); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  cosmic-ext-appl|/app/bin/cosmic-ext-applet-external-monitor-brightness:
+    category: trust
+    note: third-party COSMIC applet `cosmic-ext-applet-external-monitor-brightness`, a Flatpak run inside
+      bwrap; no dpkg check, `flatpak info` gives its origin.
+    provider: app
+    updated: '2026-11-09'
+  cosmic-ext-appl|/app/bin/cosmic-ext-applet-sysinfo:
+    category: trust
+    note: third-party COSMIC applet `cosmic-ext-applet-sysinfo`, a Flatpak run inside bwrap; no dpkg check,
+      `flatpak info` gives its origin.
+    provider: app
+    updated: '2026-11-09'
+version: 1

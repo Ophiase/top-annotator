@@ -1,0 +1,40 @@
+# top-annotator cache (ubuntu/system/suggestions/vpn); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  charon|/usr/lib/ipsec/charon:
+    category: safe
+    note: StrongSwan IPsec daemon; shipped by the Ubuntu package `strongswan-charon` at `/usr/lib/ipsec/charon`.
+      Package-managed, so `dpkg -V strongswan-charon` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  mullvad-daemon|/usr/bin/mullvad-daemon:
+    category: trust
+    note: Mullvad VPN daemon, runs as root; shipped by `repository.mullvad.net` as the package `mullvad-vpn`
+      at `/usr/bin/mullvad-daemon`, not by Ubuntu. `dpkg -V mullvad-vpn` checks the files, not the vendor.
+    provider: service
+    updated: '2026-11-11'
+  nordvpnd|/usr/sbin/nordvpnd:
+    category: trust
+    note: NordVPN daemon, runs as root; shipped by `repo.nordvpn.com` as the package `nordvpn` at `/usr/sbin/nordvpnd`,
+      not by Ubuntu. `dpkg -V nordvpn` checks the files, not the vendor.
+    provider: service
+    updated: '2026-11-11'
+  openvpn|/usr/sbin/openvpn:
+    category: safe
+    note: OpenVPN tunnel; shipped by the Ubuntu package `openvpn` at `/usr/sbin/openvpn`. Package-managed,
+      so `dpkg -V openvpn` is the integrity check.
+    provider: service
+    updated: '2026-11-11'
+  starter|/usr/lib/ipsec/starter:
+    category: safe
+    note: StrongSwan starter daemon; shipped by the Ubuntu package `strongswan-starter` at `/usr/lib/ipsec/starter`.
+      Package-managed, so `dpkg -V strongswan-starter` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  tailscaled|/usr/sbin/tailscaled:
+    category: trust
+    note: Tailscale mesh VPN daemon; shipped by `pkgs.tailscale.com` as the package `tailscale` at `/usr/sbin/tailscaled`,
+      not by Ubuntu. `dpkg -V tailscale` checks the files, not the vendor.
+    provider: service
+    updated: '2026-11-11'
+version: 1

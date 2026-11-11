@@ -1,0 +1,29 @@
+spec: 1
+
+identity:
+  name: top-annotator
+  author: Phorcys
+    github: Ophiase
+  nature: personal
+  visibility: public
+  since: 2026
+
+audience:
+  - the author, auditing a Linux workstation
+  - a second person sharing the audit file
+  - any Linux user who wants to audit their own workstation
+
+lifecycle:
+  stage: prototype
+  registries:
+    pypi: not-yet
+  ci:
+    mode: manual
+    activation: consent
+
+agent:
+  autonomy:
+    commit: never
+    push: never
+    version-bump: ask
+    commit-when: asked

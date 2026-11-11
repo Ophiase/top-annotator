@@ -1,0 +1,6 @@
+version: 1
+annotations:
+  photo-indexer|/opt/photo-indexer/bin/photo-indexer:
+    category: trust
+    provider: app
+    note: photo library indexer, installed from the vendor's archive

@@ -1,0 +1,17 @@
+# top-annotator cache (ubuntu/system/suggestions/remote); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  smbd|/usr/sbin/smbd:
+    category: safe
+    note: Samba file sharing; it listens on the network; shipped by the Ubuntu package `samba` at `/usr/sbin/smbd`.
+      Package-managed, so `dpkg -V samba` is the integrity check.
+    provider: service
+    updated: '2026-11-11'
+  sshd|/usr/sbin/sshd:
+    category: safe
+    note: OpenSSH server; it listens on the network, so check who may log in; shipped by the Ubuntu package
+      `openssh-server` at `/usr/sbin/sshd`. Package-managed, so `dpkg -V openssh-server` is the integrity
+      check.
+    provider: service
+    updated: '2026-11-11'
+version: 1

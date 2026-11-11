@@ -1,0 +1,4 @@
+# A fictional distribution, so a recording never shows the host's.
+ID=demo
+ID_LIKE=debian
+NAME="Demo Linux"

@@ -1,0 +1,11 @@
+# top-annotator cache (ubuntu/system/desktop-tools); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  paplay|/usr/bin/paplay:
+    category: safe
+    note: PulseAudio/PipeWire sound player, often run by a notification hook; shipped by the Ubuntu package
+      `pulseaudio-utils` at `/usr/bin/paplay`. Package-managed, so `dpkg -V pulseaudio-utils` is the integrity
+      check.
+    provider: distro
+    updated: '2026-11-10'
+version: 1

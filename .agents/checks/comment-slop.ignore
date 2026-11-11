@@ -1,0 +1,10 @@
+# The portable folder is copied as-is from another repository: its comments
+# are not this project's comments.
+*/.agents/portable/*
+
+# A local template explains how to use itself, which no code can say.
+*/.agents/local.example.yaml
+
+# The base audit's headers are written by the tool itself, and an empty scope
+# carries a TODO on purpose: it is a slot waiting for a contributor.
+*/src/top_annotator/audit/base/*

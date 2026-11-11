@@ -1,0 +1,67 @@
+# top-annotator cache (ubuntu/system/services); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  agent|/usr/libexec/geoclue-2.0/demos/agent:
+    category: safe
+    note: geoclue location agent, an XDG autostart that answers apps asking for the position; shipped
+      by the package `geoclue-2.0`. Package-managed, so `dpkg -V geoclue-2.0` is the integrity check.
+    provider: distro
+    updated: '2026-11-09'
+  applet.py|/usr/bin/python3.12:
+    category: trust
+    note: 'printer status applet, an XDG autostart; script shipped by the package `system-config-printer`.
+      Trust, not safe: the signature names only the interpreter, so any python script called applet.py
+      would match.'
+    provider: distro
+    updated: '2026-11-09'
+  cron|/usr/sbin/cron:
+    category: safe
+    note: scheduled command daemon; shipped by the Ubuntu package `cron` at `/usr/sbin/cron`. Package-managed,
+      so `dpkg -V cron` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  cupsd|/usr/sbin/cupsd:
+    category: safe
+    note: printing service; shipped by the Ubuntu package `cups-daemon` at `/usr/sbin/cupsd`. Package-managed,
+      so `dpkg -V cups-daemon` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  gcr-ssh-agent|/usr/libexec/gcr-ssh-agent:
+    category: safe
+    children:
+    - ssh-agent
+    note: SSH agent of the GNOME crypto stack; shipped by the Ubuntu package `gcr4` at `/usr/libexec/gcr-ssh-agent`.
+      Package-managed, so `dpkg -V gcr4` is the integrity check.
+    provider: distro
+    updated: '2026-11-09'
+  packagekitd|/usr/libexec/packagekitd:
+    category: safe
+    note: package management service; shipped by the Ubuntu package `packagekit` at `/usr/libexec/packagekitd`.
+      Package-managed, so `dpkg -V packagekit` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  rsyslogd|/usr/sbin/rsyslogd:
+    category: safe
+    note: system log daemon; shipped by the Ubuntu package `rsyslog`. Package-managed, so `dpkg -V rsyslog`
+      is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  sleep|/usr/bin/sleep:
+    category: safe
+    note: 'coreutils sleep: waits, reads and writes nothing, so it is safe whoever starts it. Package-managed,
+      so `dpkg -V coreutils` is the integrity check.'
+    provider: distro
+    updated: '2026-11-09'
+  snapd|/usr/lib/snapd/snapd:
+    category: safe
+    note: Snap package manager; shipped by the Ubuntu package `snapd` at `/usr/lib/snapd/snapd`. Package-managed,
+      so `dpkg -V snapd` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  uuidd|/usr/sbin/uuidd:
+    category: safe
+    note: UUID generation daemon; shipped by the Ubuntu package `uuid-runtime` at `/usr/sbin/uuidd`. Package-managed,
+      so `dpkg -V uuid-runtime` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+version: 1

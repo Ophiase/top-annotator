@@ -1,0 +1,46 @@
+# top-annotator cache (ubuntu/system/network); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  ModemManager|/usr/sbin/ModemManager:
+    category: safe
+    note: mobile broadband manager; shipped by the Ubuntu package `modemmanager` at `/usr/sbin/ModemManager`.
+      Package-managed, so `dpkg -V modemmanager` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  NetworkManager|/usr/sbin/NetworkManager:
+    category: safe
+    note: network connection manager; shipped by the Ubuntu package `network-manager` at `/usr/sbin/NetworkManager`.
+      Package-managed, so `dpkg -V network-manager` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  avahi-daemon|avahi-daemon:
+    category: safe
+    note: local network discovery service; shipped by the Ubuntu package `avahi-daemon`. Package-managed,
+      so `dpkg -V avahi-daemon` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  bluetoothd|/usr/lib/bluetooth/bluetoothd:
+    category: safe
+    note: Bluetooth service; shipped by the Ubuntu package `bluez` at `/usr/lib/bluetooth/bluetoothd`.
+      Package-managed, so `dpkg -V bluez` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  networkd-dispat|/usr/bin/python3|/usr/bin/networkd-dispatcher:
+    category: safe
+    note: networkd dispatcher; shipped by the Ubuntu package `python3-minimal` at `/usr/bin/python3`.
+      Package-managed, so `dpkg -V python3-minimal` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  wpa_supplicant|/sbin/wpa_supplicant:
+    category: safe
+    note: Wi-Fi authentication daemon; shipped by the Ubuntu package `wpasupplicant` at `/sbin/wpa_supplicant`.
+      Package-managed, so `dpkg -V wpasupplicant` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+  wpa_supplicant|/usr/sbin/wpa_supplicant:
+    category: safe
+    note: Wi-Fi authentication daemon; shipped by the Ubuntu package `wpasupplicant` at `/usr/sbin/wpa_supplicant`.
+      Package-managed, so `dpkg -V wpasupplicant` is the integrity check.
+    provider: distro
+    updated: '2026-11-09'
+version: 1

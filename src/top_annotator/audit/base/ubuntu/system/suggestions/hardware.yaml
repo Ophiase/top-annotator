@@ -1,0 +1,47 @@
+# top-annotator cache (ubuntu/system/suggestions/hardware); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  boltd|/usr/libexec/boltd:
+    category: safe
+    note: Thunderbolt device manager; shipped by the Ubuntu package `bolt` at `/usr/libexec/boltd`. Package-managed,
+      so `dpkg -V bolt` is the integrity check.
+    provider: distro
+    updated: '2026-11-11'
+  fprintd|/usr/libexec/fprintd:
+    category: safe
+    note: fingerprint reader service; shipped by the Ubuntu package `fprintd` at `/usr/libexec/fprintd`.
+      Package-managed, so `dpkg -V fprintd` is the integrity check.
+    provider: distro
+    updated: '2026-11-11'
+  iio-sensor-pro|/usr/libexec/iio-sensor-proxy:
+    category: safe
+    note: accelerometer and light sensor proxy; shipped by the Ubuntu package `iio-sensor-proxy` at `/usr/libexec/iio-sensor-proxy`.
+      Package-managed, so `dpkg -V iio-sensor-proxy` is the integrity check.
+    provider: distro
+    updated: '2026-11-11'
+  nvidia-persiste|/usr/bin/nvidia-persistenced:
+    category: safe
+    note: NVIDIA driver persistence daemon; shipped by the Ubuntu package `nvidia-compute-utils-<version>`
+      at `/usr/bin/nvidia-persistenced`. Package-managed, so `dpkg -V nvidia-compute-utils-<version>`
+      is the integrity check.
+    provider: distro
+    updated: '2026-11-09'
+  power-profiles-|/usr/libexec/power-profiles-daemon:
+    category: safe
+    note: power profile switcher; shipped by the Ubuntu package `power-profiles-daemon` at `/usr/libexec/power-profiles-daemon`.
+      Package-managed, so `dpkg -V power-profiles-daemon` is the integrity check.
+    provider: distro
+    updated: '2026-11-11'
+  smartd|/usr/sbin/smartd:
+    category: safe
+    note: disk SMART health monitor; shipped by the Ubuntu package `smartmontools` at `/usr/sbin/smartd`.
+      Package-managed, so `dpkg -V smartmontools` is the integrity check.
+    provider: distro
+    updated: '2026-11-09'
+  switcheroo-cont|/usr/libexec/switcheroo-control:
+    category: safe
+    note: GPU switching service; shipped by the Ubuntu package `switcheroo-control` at `/usr/libexec/switcheroo-control`.
+      Package-managed, so `dpkg -V switcheroo-control` is the integrity check.
+    provider: distro
+    updated: '2026-11-01'
+version: 1

@@ -1,0 +1,7 @@
+[global]
+
+exclude = [".git", ".github", ".venv"]
+
+respect_gitignore = true
+
+disable = ["MD033"]

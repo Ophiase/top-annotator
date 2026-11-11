@@ -1,0 +1,17 @@
+# top-annotator cache (ubuntu/programs/suggestions/virtualization); safe to edit and share.
+# Signature = process name | executable (or argv[0]) [| script].
+annotations:
+  VBoxSVC|/usr/lib/virtualbox/VBoxSVC:
+    category: trust
+    note: VirtualBox service process; shipped by the Ubuntu package `virtualbox` at `/usr/lib/virtualbox/VBoxSVC`.
+      Package-managed, so `dpkg -V virtualbox` is the integrity check.
+    provider: service
+    updated: '2026-11-11'
+  libvirtd|/usr/sbin/libvirtd:
+    category: safe
+    note: libvirt daemon; as root, its socket is a door to root for its group; shipped by the Ubuntu package
+      `libvirt-daemon` at `/usr/sbin/libvirtd`. Package-managed, so `dpkg -V libvirt-daemon` is the integrity
+      check.
+    provider: service
+    updated: '2026-11-11'
+version: 1
