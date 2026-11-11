@@ -9,7 +9,7 @@ from ...core.section_header import SectionHeader
 from ...core.tree import ProcessRow
 from ..table import ProcessTable
 
-SELECTION_STYLE = Style(bgcolor="#d9c9a3")
+SELECTION_STYLE = Style(bgcolor="#f2c14e", color="#2b2416", bold=True)
 
 
 class NavigationActions:
@@ -41,6 +41,10 @@ class NavigationActions:
         cursor = self.query_one(ProcessTable).cursor_row
         self._visual_anchor = None if self._visual_anchor is not None else cursor
         self._paint_selection()
+        if self._visual_anchor is not None:
+            self.notify(
+                "visual: j/k extend · s S a x A apply · v or Esc leave", timeout=3
+            )
 
     def _leave_visual(self: Any) -> bool:
         was_visual = self._visual_anchor is not None
@@ -56,13 +60,22 @@ class NavigationActions:
         return range(low, high + 1)
 
     def _paint_selection(self: Any) -> None:
+        """Repaint only the rows whose selection changed: a full refresh on
+        every cursor move makes the table flicker."""
         table = self.query_one(ProcessTable)
+        before = set(table.selection_styles)
         table.selection_styles = (
             dict.fromkeys(self._selection(), SELECTION_STYLE)
             if self._visual_anchor is not None
             else {}
         )
-        table.refresh()
+        changed = before ^ set(table.selection_styles)
+        if changed:
+            table.clear_render_cache()
+            for index in changed:
+                table.refresh_row(index)
+        if changed or before:
+            self._update_status()
 
     def _targets(self: Any) -> tuple[ProcessInfo, ...]:
         """The processes an action applies to: the visual selection, or the

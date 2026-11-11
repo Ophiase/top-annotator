@@ -127,6 +127,9 @@ class ViewActions:
             flags = [self._view, "demo data, discarded on exit"]
         elif self._store.session_path is not None:
             flags.append(f"yours {shown_path(self._store.session_path)}")
+        if self._visual_anchor is not None:
+            selected = len(self._targets())
+            flags.insert(0, f"[b #2b2416 on #f2c14e] VISUAL {selected} selected [/]")
         if self._frozen:
             flags.append("frozen")
         if self._filter != ALL:

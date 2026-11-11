@@ -18,6 +18,11 @@ class ProcessTable(DataTable):
         self.row_styles: dict[int, Style] = {}
         self.selection_styles: dict[int, Style] = {}
 
+    def clear_render_cache(self) -> None:
+        """Rendered rows are cached with their style; a new selection must
+        not reuse a line painted before it."""
+        self._clear_caches()
+
     async def action_show_detail(self) -> None:
         await self.app.run_action("show_detail")
 
