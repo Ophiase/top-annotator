@@ -11,7 +11,8 @@
 | `Enter` | details: signature, executable, parents, note; on a header, the band or group |
 | `s` | mark the selected process **TRUST** (lowest trust level) |
 | `S` | choose the trust level precisely, or `unreviewed` to remove it |
-| `A` | accept the base's suggestion for this process into your layer |
+| `A` | accept the base's suggestion into your layer; on a band or group header, every suggestion in it |
+| `v` | visual mode: `j` / `k` extend the selection, then `s`, `S`, `a`, `x` or `A` act on every row; `Esc` leaves |
 | `a` | cycle `trust → host → audited → safe → core → personal → watch → unsafe → unannotated` |
 | `x` | remove the annotation |
 | `u` | undo the latest change to your annotations, one step per press |
@@ -36,7 +37,7 @@ The default view groups processes by urgency:
 | --- | --- |
 | `WEIRD` | a masquerade, an executable in `/tmp` or `/dev/shm`, a deleted executable, a zombie, a system name on the wrong binary, a `watch` / `unsafe` mark |
 | `ATTENTION` | may be legitimate, but look now: a program that acts through its arguments (`curl`, `ssh`, `sh -c curl …`, `python3 -c`), or a root daemon that hands root to you |
-| `NEW` | unannotated userland processes, bold red; `sug` or `sys?` is a hint |
+| `NEW` | unannotated userland processes, bold red; `→ safe` (a suggested level) or `sys?` is a hint |
 | `SAFE` | every positive trust level, plus kernel threads |
 
 - An `ATTENTION` row never fades: no annotation and no parent can make it

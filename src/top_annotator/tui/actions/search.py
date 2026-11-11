@@ -28,6 +28,8 @@ class SearchActions:
         self.query_one(ProcessTable).focus()
 
     def action_escape(self: Any) -> None:
+        if self._leave_visual():
+            return
         search = self.query_one(Input)
         if search.has_focus or self._query:
             search.value = ""

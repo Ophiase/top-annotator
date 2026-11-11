@@ -111,7 +111,7 @@ def audit_cell(
     parent: Annotation | None = None,
     *,
     agent_shell: bool = False,
-    suggested: bool = False,
+    suggested: str = "",
 ) -> Text:
     if is_zombie(process):
         return Text("ZOMBIE", style="#9a6b1f")
@@ -127,7 +127,7 @@ def audit_cell(
             return Text("kernel", style="dim #1f5fa8")
         cell = Text("NEW", style="bold #b42318")
         if suggested:
-            cell.append(" sug", style="#7b5e1f")
+            cell.append(f" → {suggested}", style="#7b5e1f")
         elif looks_like_system_process(process):
             cell.append(" sys?", style="#1f5fa8")
         return cell

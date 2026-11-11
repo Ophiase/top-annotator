@@ -74,28 +74,28 @@ class AnnotationActions:
         self.push_screen(ReviewScreen(self._store.rule_rows()), self._focus_table)
 
     def action_choose_trust(self: Any) -> None:
-        process = self._selected_process()
-        if process is None:
+        targets = self._targets()
+        if not targets:
             return
-        annotation = self._store.annotation_for(process.signature)
+        annotation = self._store.annotation_for(targets[0].signature)
+        title = (
+            targets[0].signature if len(targets) == 1 else f"{len(targets)} processes"
+        )
         self.push_screen(
             ChoiceScreen(
-                process.signature,
+                title,
                 TRUST_LABELS,
                 annotation.category.value if annotation else None,
             ),
-            partial(self._save_trust, process),
+            partial(self._save_trust, targets),
         )
 
-    def _save_trust(self: Any, process: ProcessInfo, choice: str | None) -> None:
+    def _save_trust(
+        self: Any, targets: tuple[ProcessInfo, ...], choice: str | None
+    ) -> None:
         self.query_one(ProcessTable).focus()
-        if choice == UNREVIEWED:
-            self._store.clear(process.signature)
-        elif choice is not None:
-            self._store.set(
-                process.signature, Category(choice), family=family_for(process)
-            )
-        self._render()
+        if choice is not None:
+            self._apply(targets, None if choice == UNREVIEWED else Category(choice))
 
     def action_cycle_category(self: Any) -> None:
         process = self._selected_process()
@@ -105,32 +105,38 @@ class AnnotationActions:
         self._annotate(next_category(current.category if current else None))
 
     def _annotate(self: Any, category: Category | None) -> None:
-        process = self._selected_process()
-        if process is None:
-            return
-        if category is None:
-            self._store.clear(process.signature)
-        else:
-            self._store.set(
-                process.signature,
-                category,
-                family=family_for(process),
-            )
+        self._apply(self._targets(), category)
+
+    def _apply(
+        self: Any, targets: tuple[ProcessInfo, ...], category: Category | None
+    ) -> None:
+        for process in targets:
+            if category is None:
+                self._store.clear(process.signature)
+            else:
+                self._store.set(process.signature, category, family=family_for(process))
+        self._leave_visual()
         self._render()
         label = category.value if category else "unannotated"
-        self.notify(f"{process.name}[{process.pid}] → {label}", timeout=1.5)
+        if len(targets) == 1:
+            self.notify(f"{targets[0].name}[{targets[0].pid}] → {label}", timeout=1.5)
+        elif targets:
+            self.notify(f"{len(targets)} processes → {label}", timeout=2)
 
     def action_accept_suggestion(self: Any) -> None:
-        process = self._selected_process()
-        if process is None:
-            return
-        accepted = self._store.accept_suggestion(process.signature)
-        if accepted is None:
-            self.notify("no suggestion for this process", timeout=1.5)
+        on_header = self._visual_anchor is None and self._header_members()
+        targets = self._header_members() if on_header else self._targets()
+        accepted = [
+            process
+            for process in targets
+            if self._store.accept_suggestion(process.signature) is not None
+        ]
+        self._leave_visual()
+        if not accepted:
+            self.notify("no suggestion to accept here", timeout=1.5)
             return
         self._render()
-        label = accepted.category.value
-        self.notify(f"{process.name}[{process.pid}] → {label} (suggested)", timeout=2)
+        self.notify(f"{len(accepted)} suggestion(s) accepted; u undoes one", timeout=2)
 
     def action_clear_annotation(self: Any) -> None:
         self._annotate(None)

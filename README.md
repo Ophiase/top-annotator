@@ -70,8 +70,9 @@ Every other way, what each needs, and what is not ready yet:
    but look now: `curl`, a root Docker socket you can write), `NEW` (bold
    red), then `SAFE`.
 2. `s` marks the selected process `trust`; `S` picks a precise level.
-3. `NEW sug` means the base suggests a level for an optional program: `Enter`
-   shows it, `A` accepts it.
+3. `NEW → safe` means the base suggests a level for an optional program:
+   `Enter` shows why, `A` accepts it, `A` on a band header accepts them all.
+   `v` selects several rows for `s`, `S`, `x` or `A`.
 4. Your marks go to `~/.local/share/top-annotator/session.yaml`, over a
    bundled base audit; `u` undoes the last one.
 5. `/` searches and keeps each match's whole parent chain.
@@ -91,6 +92,6 @@ decentralised: copy it rather than fork it, see
 
 ## Contributors
 
-- Phorcys — author
+- Phorcys ([@Ophiase](https://github.com/Ophiase)) — author
 
 `<>`

@@ -16,6 +16,7 @@ class ProcessTable(DataTable):
     def __init__(self, *, id: str | None = None) -> None:
         super().__init__(id=id)
         self.row_styles: dict[int, Style] = {}
+        self.selection_styles: dict[int, Style] = {}
 
     async def action_show_detail(self) -> None:
         await self.app.run_action("show_detail")
@@ -24,5 +25,10 @@ class ProcessTable(DataTable):
         # Textual's only per-row hook (zebra stripes use it); a cell's own Text
         # style stops at the text, this one also fills the padding.
         style = super()._get_row_style(row_index, base_style)
-        extra = self.row_styles.get(row_index)
-        return style + extra if extra is not None else style
+        for extra in (
+            self.row_styles.get(row_index),
+            self.selection_styles.get(row_index),
+        ):
+            if extra is not None:
+                style += extra
+        return style

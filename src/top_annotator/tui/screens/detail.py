@@ -68,6 +68,11 @@ class DetailScreen(ModalScreen[None]):
             typed=self._typed,
         )
         weird = f"[dim]weird[/dim]      {escape(reason)}\n" if reason else ""
+        if not process.exe and process.cmdline:
+            weird += (
+                "[dim]identity[/dim]   from argv[0], which the process chose:"
+                " `sudo top-annotator snapshot` reads the real executable\n"
+            )
         if self._suggestion is not None:
             weird += (
                 f"[dim]suggests[/dim]   {self._suggestion.category.value}"

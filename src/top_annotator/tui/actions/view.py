@@ -5,9 +5,13 @@ import subprocess
 from typing import Any
 
 from textual.timer import Timer
+from textual.widgets import Static
 
-from ...core import ProcessInfo, provider_of
-from ...core.tree.filters import FILTERS
+from ...audit import BASE_AUDIT
+from ...core import Category, ProcessInfo, provider_of
+from ...core.tree import ProcessRow
+from ...core.tree.filters import ALL, FILTERS
+from ...process.cache import shown_path
 from ..screens import ChoiceScreen
 from ..table import ProcessTable
 
@@ -89,6 +93,63 @@ class ViewActions:
 
     async def action_quit(self: Any) -> None:
         self.exit()
+
+    def _suggested_level(self: Any, process: ProcessInfo) -> str:
+        suggestion = self._store.suggestions.get(process.signature)
+        return suggestion.category.value if suggestion else ""
+
+    def _update_status(self: Any) -> None:
+        processes = self._tree.processes if self._tree else ()
+        unreviewed = sum(
+            1
+            for process in processes
+            if self._tree is not None
+            and self._tree.unreviewed(process, self._store.annotations)
+        )
+        safe = sum(
+            1
+            for annotation in self._store.annotations.values()
+            if annotation.category is Category.SAFE
+        )
+        suggested = len({
+            process.signature
+            for process in processes
+            if self._suggested_level(process)
+            and process.signature not in self._store.annotations
+        })
+        offer = (
+            f"  ·  [#7b5e1f]{suggested} suggested: A accepts, on a header all[/]"
+            if suggested
+            else ""
+        )
+        flags = [self._view, f"audit {self._audit_label()}"]
+        if self._notice:
+            flags = [self._view, "demo data, discarded on exit"]
+        elif self._store.session_path is not None:
+            flags.append(f"yours {shown_path(self._store.session_path)}")
+        if self._frozen:
+            flags.append("frozen")
+        if self._filter != ALL:
+            flags.append(f"filter {self._filter}")
+        if self._query:
+            flags.append("search")
+        shown = sum(1 for row in self._rows if isinstance(row, ProcessRow))
+        query = f"  ·  {self._query}" if self._query else ""
+        mode = f"  ·  {', '.join(flags)}" if flags else ""
+        self.query_one("#status", Static).update(
+            f"[bold]{shown}[/bold]/{len(processes)} shown"
+            f"  ·  [bold bright_red]{unreviewed}[/bold bright_red] unreviewed"
+            f"  ·  [green]{safe}[/green] safe{offer}"
+            "  ·  [dim]s trust · S level · a cycle · x clear · n note"
+            " · f filter · t sections/tree/flat[/dim]"
+            f"{mode}{query}"
+        )
+
+    def _audit_label(self: Any) -> str:
+        root = self._store.root
+        label = "bundled" if root == BASE_AUDIT.resolve() else shown_path(root)
+        read = [scope for scope in self._store.scopes if (root / scope).is_dir()]
+        return f"{label}: {', '.join(read)}" if read else label
 
 
 def copy_with_wl(text: str) -> bool:

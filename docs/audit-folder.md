@@ -45,9 +45,12 @@ Which distributions are covered, and how to add one, is in
 A `suggestions/` folder inside a family holds entries for **optional**
 programs: a GPU driver, a VPN, Docker, an applet some people install.
 
-- A suggestion is never trusted: the process stays `NEW`, with a `sug` hint.
+- A suggestion is never trusted: the process stays `NEW`, shown
+  `NEW → safe` with the level the base suggests.
 - `Enter` shows the suggested level and note; `A` copies it into your layer,
-  as your decision, journaled and undoable like any other change.
+  as your decision, journaled and undoable like any other change. `A` on a
+  band or group header accepts every suggestion in it; `u` undoes one at a
+  time.
 - Agents see it as `suggested` in `snapshot`.
 - The base proper keeps only what every install of a distribution runs.
 

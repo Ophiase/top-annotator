@@ -10,6 +10,12 @@ Milestones of the whole project; the version is in `VERSION`.
 
 ## Unreleased
 
+- **Visual mode**: `v`, then `j` / `k`, then `s`, `S`, `a`, `x` or `A` on every
+  selected row.
+- **Suggestions say what they suggest**: `NEW → safe` instead of `NEW sug`;
+  the status line counts them; `A` on a header accepts every one in it.
+- **Identity from `argv[0]`** is said in the details screen: the process
+  chose it.
 - **`just audit` checks CVEs only**: `uv audit` over the locked
   dependencies; the licence check is gone.
 - **`top-annotator paths`**: every place the tool reads or writes, which ones

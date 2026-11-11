@@ -3,15 +3,11 @@ from __future__ import annotations
 from typing import Any
 
 from rich.text import Text
-from textual.widgets import Static
 
-from ...audit import BASE_AUDIT
-from ...core import Category, ProcessInfo
+from ...core import ProcessInfo
 from ...core.section_header import SectionHeader
 from ...core.tree import ProcessRow, Row
-from ...core.tree.filters import ALL
 from ...core.tree.process_tree import ProcessTree
-from ...process.cache import shown_path
 from ..presentation import (
     CATEGORY_COLORS,
     PROVIDER_COLORS,
@@ -130,7 +126,7 @@ class RenderingActions:
                 process,
                 parent,
                 agent_shell=self._tree.agent_shell(process, self._store.annotations),
-                suggested=self._store.suggestions.get(process.signature) is not None,
+                suggested=self._suggested_level(process),
             ),
             provider_cell(process, annotation),
             net_cell(process),
@@ -187,45 +183,3 @@ class RenderingActions:
             (process for process in self._tree.processes if process.pid == pid),
             None,
         )
-
-    def _update_status(self: Any) -> None:
-        processes = self._tree.processes if self._tree else ()
-        unreviewed = sum(
-            1
-            for process in processes
-            if self._tree is not None
-            and self._tree.unreviewed(process, self._store.annotations)
-        )
-        safe = sum(
-            1
-            for annotation in self._store.annotations.values()
-            if annotation.category is Category.SAFE
-        )
-        flags = [self._view, f"audit {self._audit_label()}"]
-        if self._notice:
-            flags = [self._view, "demo data, discarded on exit"]
-        elif self._store.session_path is not None:
-            flags.append(f"yours {shown_path(self._store.session_path)}")
-        if self._frozen:
-            flags.append("frozen")
-        if self._filter != ALL:
-            flags.append(f"filter {self._filter}")
-        if self._query:
-            flags.append("search")
-        shown = sum(1 for row in self._rows if isinstance(row, ProcessRow))
-        query = f"  ·  {self._query}" if self._query else ""
-        mode = f"  ·  {', '.join(flags)}" if flags else ""
-        self.query_one("#status", Static).update(
-            f"[bold]{shown}[/bold]/{len(processes)} shown"
-            f"  ·  [bold bright_red]{unreviewed}[/bold bright_red] unreviewed"
-            f"  ·  [green]{safe}[/green] safe"
-            "  ·  [dim]s trust · S level · a cycle · x clear · n note"
-            " · f filter · t sections/tree/flat[/dim]"
-            f"{mode}{query}"
-        )
-
-    def _audit_label(self: Any) -> str:
-        root = self._store.root
-        label = "bundled" if root == BASE_AUDIT.resolve() else shown_path(root)
-        read = [scope for scope in self._store.scopes if (root / scope).is_dir()]
-        return f"{label}: {', '.join(read)}" if read else label
