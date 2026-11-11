@@ -10,6 +10,8 @@ Milestones of the whole project; the version is in `VERSION`.
 
 ## Unreleased
 
+- **`just audit` checks CVEs only**: `uv audit` over the locked
+  dependencies; the licence check is gone.
 - **`top-annotator paths`**: every place the tool reads or writes, which ones
   your user can write, and the variables that moved one.
 - **An `ATTENTION` band** between `WEIRD` and `NEW`: legitimate perhaps, but

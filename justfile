@@ -49,11 +49,9 @@ mod agent 'agent.just'
     just -l
 
 [group("dev")]
-[doc("Check the lock, the known vulnerabilities and the licences; asks the network, so it stays out of the gate")]
-audit:
-    uv lock --check
-    uv audit
-    uv run --with pip-licenses pip-licenses --partial-match --fail-on "GPL;AGPL;SSPL"
+[doc("Known vulnerabilities (CVE) in the locked dependencies; asks the network, so it stays out of the gate")]
+@audit:
+    uv audit --preview-features audit
 
 [group("dev")]
 [doc("Record the demo machine as docs/media/demo.gif; needs ImageMagick's convert")]

@@ -82,7 +82,7 @@ Every other way, what each needs, and what is not ready yet:
 uv sync --all-groups
 just checks                     # markdown + lint + format + types + tests
 just gate                       # checks, then the portable and project guards
-just audit                      # lock, known vulnerabilities, licences (network)
+just audit                      # known vulnerabilities (CVE) in the dependencies
 ```
 
 Code layout and agent rules are in [AGENTS.md](AGENTS.md). The project is
