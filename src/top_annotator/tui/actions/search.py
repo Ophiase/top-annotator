@@ -28,7 +28,7 @@ class SearchActions:
         self.query_one(ProcessTable).focus()
 
     def action_escape(self: Any) -> None:
-        if self._leave_visual():
+        if self._escape_selection():
             return
         search = self.query_one(Input)
         if search.has_focus or self._query:

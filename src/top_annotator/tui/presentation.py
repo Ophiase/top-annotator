@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import re
+
+from rich.markup import escape
 from rich.style import Style
 from rich.text import Text
 
@@ -157,3 +160,16 @@ def kind_cell(process: ProcessInfo, annotation: Annotation | None) -> Text:
         return Text("")
     name = process.service.removeprefix("app-").replace("@autostart", " (autostart)")
     return Text(short(name, 22), style="#7a5c3e")
+
+
+CODE_SPAN = re.compile(r"`([^`]+)`")
+CLAUSE_END = re.compile(r"(?<=[.;])\s+")
+
+
+def note_markup(note: str, indent: str = "  ") -> str:
+    """A note read as lines: one clause per line, package names and paths in
+    colour, instead of one paragraph wrapped by the terminal."""
+    marked = CODE_SPAN.sub(r"[#1f5fa8]\1[/]", escape(note))
+    return "\n".join(
+        f"{indent}{clause}" for clause in CLAUSE_END.split(marked) if clause
+    )

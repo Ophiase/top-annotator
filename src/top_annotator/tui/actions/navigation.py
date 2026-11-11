@@ -14,6 +14,7 @@ SELECTION_STYLE = Style(bgcolor="#f2c14e", color="#2b2416", bold=True)
 
 class NavigationActions:
     _visual_anchor: int | None = None
+    _picked: frozenset[str] = frozenset()
 
     def action_cursor_down(self: Any) -> None:
         self._move_cursor(1)
@@ -38,56 +39,81 @@ class NavigationActions:
             self._paint_selection()
 
     def action_toggle_visual(self: Any) -> None:
-        cursor = self.query_one(ProcessTable).cursor_row
-        self._visual_anchor = None if self._visual_anchor is not None else cursor
-        self._paint_selection()
         if self._visual_anchor is not None:
+            self._commit_zone()
+        else:
+            self._visual_anchor = self.query_one(ProcessTable).cursor_row
             self.notify(
-                "visual: j/k extend · s S a x A apply · v or Esc leave", timeout=3
+                "visual: j/k extend · Esc keeps the zone, Esc again clears all"
+                " · v starts another · s S a x A apply",
+                timeout=4,
             )
-
-    def _leave_visual(self: Any) -> bool:
-        was_visual = self._visual_anchor is not None
-        self._visual_anchor = None
         self._paint_selection()
-        return was_visual
 
-    def _selection(self: Any) -> range:
-        cursor = self.query_one(ProcessTable).cursor_row
+    def _commit_zone(self: Any) -> None:
+        zone = {self._rows[index].key for index in self._zone()}
+        self._picked = frozenset(self._picked | zone)
+        self._visual_anchor = None
+
+    def _escape_selection(self: Any) -> bool:
+        """The first Esc ends the zone being drawn and keeps it; the next one
+        drops the whole selection. False when there was nothing to drop."""
+        if self._visual_anchor is not None:
+            self._commit_zone()
+        elif self._picked:
+            self._picked = frozenset()
+        else:
+            return False
+        self._paint_selection()
+        return True
+
+    def _clear_selection(self: Any) -> None:
+        self._visual_anchor = None
+        self._picked = frozenset()
+        self._paint_selection()
+
+    def _zone(self: Any) -> range:
         if self._visual_anchor is None:
-            return range(cursor, cursor + 1)
+            return range(0)
+        cursor = self.query_one(ProcessTable).cursor_row
         low, high = sorted((self._visual_anchor, cursor))
-        return range(low, high + 1)
+        return range(max(low, 0), min(high, len(self._rows) - 1) + 1)
+
+    def _selected_indices(self: Any) -> set[int]:
+        picked = {
+            index for index, row in enumerate(self._rows) if row.key in self._picked
+        }
+        return picked | set(self._zone())
 
     def _paint_selection(self: Any) -> None:
         """Repaint only the rows whose selection changed: a full refresh on
         every cursor move makes the table flicker."""
         table = self.query_one(ProcessTable)
         before = set(table.selection_styles)
-        table.selection_styles = (
-            dict.fromkeys(self._selection(), SELECTION_STYLE)
-            if self._visual_anchor is not None
-            else {}
+        table.selection_styles = dict.fromkeys(
+            self._selected_indices(), SELECTION_STYLE
         )
         changed = before ^ set(table.selection_styles)
         if changed:
             table.clear_render_cache()
             for index in changed:
-                table.refresh_row(index)
+                if index < table.row_count:
+                    table.refresh_row(index)
         if changed or before:
             self._update_status()
 
     def _targets(self: Any) -> tuple[ProcessInfo, ...]:
-        """The processes an action applies to: the visual selection, or the
-        process under the cursor; one per signature. A selection skips the
-        dim parents shown as context, which only the cursor can aim at."""
+        """The processes an action applies to: the selection, or the process
+        under the cursor; one per signature. A selection skips the dim parents
+        shown as context, which only the cursor can aim at."""
+        selected = sorted(self._selected_indices())
+        indices = selected or [self.query_one(ProcessTable).cursor_row]
         chosen: dict[str, ProcessInfo] = {}
-        visual = self._visual_anchor is not None
-        for index in self._selection():
+        for index in indices:
             row = self._rows[index] if 0 <= index < len(self._rows) else None
-            context = row.is_context if isinstance(row, ProcessRow) else False
-            if isinstance(row, ProcessRow) and not (context and visual):
-                chosen.setdefault(row.process.signature, row.process)
+            if not isinstance(row, ProcessRow) or (row.is_context and selected):
+                continue
+            chosen.setdefault(row.process.signature, row.process)
         return tuple(chosen.values())
 
     def _header_members(self: Any) -> tuple[ProcessInfo, ...]:

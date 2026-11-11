@@ -17,8 +17,11 @@ Hidden bindings are for shortcuts, not for discovering the tool.
 - `s` marks `trust` without a dialog; the fast path must stay one key.
 - `A` accepts the base's suggestion; nothing else turns a suggestion into
   trust. On a header it accepts every suggestion of that band or group.
-- `v` starts a visual selection; `s`, `S`, `a`, `x` and `A` then act on every
-  selected row and leave the mode. A selection skips the dim context parents.
+- `v` starts a visual zone, as in vim: `Esc` ends it and keeps it, `v` starts
+  another, a second `Esc` drops the whole selection. `s`, `S`, `a`, `x` and
+  `A` act on every selected row, then clear it. A selection skips the dim
+  context parents. Repaint only the rows that change: a full refresh on every
+  cursor move flickers.
   `s` on a header does nothing: trusting a whole band in one key is unsafe.
 - `a` cycles all categories and ends on unannotated.
 - `n` is the only modal that edits a note. It must preserve the category.

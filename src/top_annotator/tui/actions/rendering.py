@@ -57,6 +57,7 @@ class RenderingActions:
                     table.add_row(*self._cells(row), key=f"row-{index}")
             self._restore_cursor(selected_pid, selected_key)
             self._update_status()
+            self._paint_selection()
         self.call_after_refresh(
             lambda: table.scroll_to(y=scroll_y, animate=False, immediate=True)
         )

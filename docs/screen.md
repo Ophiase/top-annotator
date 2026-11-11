@@ -12,7 +12,7 @@
 | `s` | mark the selected process **TRUST** (lowest trust level) |
 | `S` | choose the trust level precisely, or `unreviewed` to remove it |
 | `A` | accept the base's suggestion into your layer; on a band or group header, every suggestion in it |
-| `v` | visual mode: `j` / `k` extend the selection, then `s`, `S`, `a`, `x` or `A` act on every row; `Esc` leaves |
+| `v` | visual mode: `j` / `k` extend a zone; `Esc` keeps it, `v` starts another, a second `Esc` drops them all; `s`, `S`, `a`, `x` or `A` act on every selected row |
 | `a` | cycle `trust → host → audited → safe → core → personal → watch → unsafe → unannotated` |
 | `x` | remove the annotation |
 | `u` | undo the latest change to your annotations, one step per press |

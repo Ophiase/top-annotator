@@ -10,7 +10,7 @@ from textual.widgets import Static
 
 from ...core import PROVIDERS, Annotation, ProcessInfo, provider_of, section_reason
 from ...process.verify import PackageIntegrity
-from ..presentation import CATEGORY_COLORS, human_bytes
+from ..presentation import CATEGORY_COLORS, human_bytes, note_markup
 
 
 class DetailScreen(ModalScreen[None]):
@@ -57,7 +57,7 @@ class DetailScreen(ModalScreen[None]):
         category = self._annotation.category if self._annotation else None
         color = CATEGORY_COLORS.get(category, "bold bright_red")
         label = category.value.upper() if category else "NEW — not audited"
-        note = escape(self._annotation.note) if self._annotation else ""
+        note = note_markup(self._annotation.note) if self._annotation else ""
         chain = " → ".join(
             f"{escape(ancestor.name)}[{ancestor.pid}]" for ancestor in self._chain
         )
@@ -75,8 +75,9 @@ class DetailScreen(ModalScreen[None]):
             )
         if self._suggestion is not None:
             weird += (
-                f"[dim]suggests[/dim]   {self._suggestion.category.value}"
-                f" — {escape(self._suggestion.note)}  [dim](A accepts)[/dim]\n"
+                f"[dim]suggests[/dim]   [b #7b5e1f]{self._suggestion.category.value}[/]"
+                "  [dim](A accepts)[/dim]\n"
+                f"{note_markup(self._suggestion.note, '             ')}\n"
             )
         if self._history:
             weird += f"[dim]history[/dim]    {escape(self._history)}\n"
@@ -98,7 +99,7 @@ class DetailScreen(ModalScreen[None]):
             f"[dim]command[/dim]    {escape(process.command)}\n"
             f"[dim]parents[/dim]    {chain}\n"
             f"{_service_lines(process, self._annotation)}"
-            f"{weird}{integrity}" + (f"\n[dim]note[/dim] {note}" if note else "")
+            f"{weird}{integrity}" + (f"\n[dim]note[/dim]\n{note}" if note else "")
         )
 
     def action_close(self) -> None:

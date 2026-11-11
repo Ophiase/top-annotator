@@ -115,7 +115,7 @@ class AnnotationActions:
                 self._store.clear(process.signature)
             else:
                 self._store.set(process.signature, category, family=family_for(process))
-        self._leave_visual()
+        self._clear_selection()
         self._render()
         label = category.value if category else "unannotated"
         if len(targets) == 1:
@@ -124,14 +124,14 @@ class AnnotationActions:
             self.notify(f"{len(targets)} processes → {label}", timeout=2)
 
     def action_accept_suggestion(self: Any) -> None:
-        on_header = self._visual_anchor is None and self._header_members()
+        on_header = not self._selected_indices() and self._header_members()
         targets = self._header_members() if on_header else self._targets()
         accepted = [
             process
             for process in targets
             if self._store.accept_suggestion(process.signature) is not None
         ]
-        self._leave_visual()
+        self._clear_selection()
         if not accepted:
             self.notify("no suggestion to accept here", timeout=1.5)
             return

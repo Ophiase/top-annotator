@@ -81,3 +81,24 @@ def test_accept_on_a_band_header_takes_every_suggestion_in_it(
     asyncio.run(scenario())
     assert app._store.source_for(PHOTO_INDEXER) == "session"
     assert app._store.annotation_for(WIREPLUMBER) is None
+
+
+def test_escape_keeps_a_zone_and_a_second_escape_drops_every_zone(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    app = _demo_app(tmp_path, monkeypatch)
+    picked: list[int] = []
+
+    async def scenario() -> None:
+        async with app.run_test(size=(140, 60)) as pilot:
+            await pilot.pause()
+            table = app.query_one(DataTable)
+            for signature in (WIREPLUMBER, PHOTO_INDEXER):
+                table.move_cursor(row=_index(app, signature))
+                await pilot.press("v", "escape")
+            picked.append(len(app._targets()))
+            await pilot.press("escape")
+            picked.append(len(app._selected_indices()))
+
+    asyncio.run(scenario())
+    assert picked == [2, 0]
